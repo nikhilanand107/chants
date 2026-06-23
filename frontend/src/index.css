@@ -1,0 +1,105 @@
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Yatra+One&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-devanagari: 'Yatra One', cursive, sans-serif;
+  
+  --color-spiritual-orange: #f97316; /* Saffron base */
+  --color-spiritual-orange-dark: #ea580c;
+  --color-spiritual-orange-light: #ffedd5;
+  
+  --color-spiritual-gold: #d97706; /* Golden hue */
+  
+  --color-deep-indigo: #1e1b4b; /* Deep spiritual night sky */
+  --color-deep-indigo-dark: #0f172a;
+  --color-deep-indigo-light: #312e81;
+}
+
+:root {
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  background-color: #060913; /* Deep cosmic dark background */
+  color: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #312e81;
+}
+
+/* Custom pulsing aura animation */
+@keyframes auraPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+    filter: blur(40px);
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.25;
+    filter: blur(60px);
+  }
+}
+
+.aurora-bg {
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 60%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, rgba(30, 27, 75, 0) 70%);
+  z-index: 0;
+  animation: auraPulse 10s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Glowing text effects */
+.glow-text-saffron {
+  text-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 12px rgba(217, 119, 6, 0.5);
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-active {
+  background: rgba(30, 27, 75, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+/* Counter tapping animation */
+@keyframes tapPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.tap-active {
+  animation: tapPulse 0.1s ease-out;
+}
