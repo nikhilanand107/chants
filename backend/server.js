@@ -27,7 +27,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://devdarsha.vercel.app"
+      "https://chants-zeta.vercel.app"
     ]
   })
 );
