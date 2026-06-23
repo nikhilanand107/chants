@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const seedData = require('./seeders/seedData');
 const initPanchangCron = require('./cron/panchangCron');
+const initKeepAlive = require('./cron/keepAliveCron');
 
 // Load environment variables
 dotenv.config();
@@ -18,6 +19,7 @@ connectDB().then(() => {
   
   // Initialize cron jobs
   initPanchangCron();
+  initKeepAlive();
 });
 
 const app = express();
