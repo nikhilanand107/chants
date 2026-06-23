@@ -1,7 +1,16 @@
 import axios from 'axios';
 
+const getBaseUrl = () => {
+  let url = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
+  // If the user set the URL in Vercel but forgot to add /api/v1 at the end, append it automatically
+  if (import.meta.env.VITE_API_URL && !url.endsWith('/api/v1')) {
+    url = `${url.replace(/\/$/, '')}/api/v1`;
+  }
+  return url;
+};
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1',
+  baseURL: getBaseUrl(),
 });
 
 // Request interceptor to attach JWT token to all requests if it exists
