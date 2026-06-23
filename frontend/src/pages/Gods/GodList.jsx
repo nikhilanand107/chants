@@ -8,6 +8,8 @@ const GodList = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [error, setError] = useState('');
+  const [wikiData, setWikiData] = useState(null);
+  const [wikiLoading, setWikiLoading] = useState(false);
 
   useEffect(() => {
     const fetchDeities = async () => {
@@ -26,6 +28,42 @@ const GodList = () => {
     };
     fetchDeities();
   }, []);
+
+  useEffect(() => {
+    if (!search.trim()) {
+      setWikiData(null);
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      try {
+        setWikiLoading(true);
+        const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(search.trim())}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.type !== 'disambiguation' && data.extract) {
+            setWikiData({
+              title: data.title,
+              extract: data.extract,
+              thumbnail: data.thumbnail?.source || null,
+              content_urls: data.content_urls
+            });
+          } else {
+            setWikiData(null);
+          }
+        } else {
+          setWikiData(null);
+        }
+      } catch (err) {
+        console.error("Wiki fetch error:", err);
+        setWikiData(null);
+      } finally {
+        setWikiLoading(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [search]);
 
   const filteredDeities = deities.filter(deity =>
     deity.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -53,6 +91,29 @@ const GodList = () => {
           className="w-full bg-slate-950 border border-slate-800 rounded-full py-3 pl-12 pr-6 text-white placeholder-slate-600 focus:outline-hidden focus:border-spiritual-orange transition-all text-sm shadow-inner"
         />
       </div>
+
+      {/* Wikipedia Results */}
+      {search.trim() && (wikiLoading ? (
+        <div className="text-center text-slate-500 text-sm animate-pulse">Searching Wikipedia...</div>
+      ) : wikiData ? (
+        <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-center md:items-start max-w-4xl mx-auto mb-8">
+          {wikiData.thumbnail && (
+            <img src={wikiData.thumbnail} alt={wikiData.title} className="w-24 h-24 rounded-full object-cover shadow-lg" />
+          )}
+          <div className="flex-1 space-y-2 text-center md:text-left">
+            <h2 className="text-xl font-display font-bold text-white flex items-center justify-center md:justify-start gap-2">
+              {wikiData.title}
+              <span className="text-xs bg-slate-800 text-slate-400 px-2 py-1 rounded-full uppercase tracking-wider font-sans">Wikipedia</span>
+            </h2>
+            <p className="text-slate-300 text-sm leading-relaxed">{wikiData.extract}</p>
+            {wikiData.content_urls && (
+              <a href={wikiData.content_urls.desktop.page} target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 text-sm inline-block mt-2 font-medium">
+                Read more on Wikipedia &rarr;
+              </a>
+            )}
+          </div>
+        </div>
+      ) : null)}
 
       {/* Grid */}
       {loading ? (

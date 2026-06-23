@@ -1,38 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../services/api';
-import { Calendar as CalendarIcon, Sparkles, BookOpen } from 'lucide-react';
+import { Calendar as CalendarIcon, Sparkles, Sun, Moon, Star, Sunrise, Sunset } from 'lucide-react';
 
 const Calendar = () => {
-  const [festivals, setFestivals] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  });
+  const [panchang, setPanchang] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchFestivals = async () => {
+    const fetchPanchang = async () => {
       try {
         setLoading(true);
-        const res = await API.get('/festivals');
+        setError('');
+        const res = await API.get(`/panchang/${selectedDate}`);
         if (res.data && res.data.success) {
-          setFestivals(res.data.data);
+          setPanchang(res.data.data);
+        } else {
+          setError('Could not retrieve panchang data for this date.');
         }
       } catch (err) {
         console.error(err);
-        setError('Could not retrieve festival calendar data.');
+        setError('Failed to fetch panchang. Please try again later.');
+        setPanchang(null);
       } finally {
         setLoading(false);
       }
     };
-    fetchFestivals();
-  }, []);
+    if (selectedDate) {
+      fetchPanchang();
+    }
+  }, [selectedDate]);
 
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-8 space-y-8">
       {/* Title */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">Hindu Festival Calendar</h1>
+        <h1 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">Daily Panchang & Festivals</h1>
         <p className="text-slate-400 text-sm max-w-xl mx-auto">
-          Keep track of holy celebrations, upcoming fasts, traditional pujas, and associated deity rituals.
+          View today's Tithi, Nakshatra, Sunrise, Sunset, and holy celebrations. Data is securely cached for lightning-fast reading.
         </p>
+      </div>
+
+      {/* Date Picker */}
+      <div className="max-w-xs mx-auto relative">
+        <div className="bg-slate-900 border border-slate-700 p-2 rounded-2xl flex items-center justify-center gap-4">
+          <CalendarIcon className="w-5 h-5 text-spiritual-orange" />
+          <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            className="bg-transparent text-white font-semibold focus:outline-hidden cursor-pointer"
+          />
+        </div>
       </div>
 
       {loading ? (
@@ -43,74 +69,66 @@ const Calendar = () => {
         <div className="text-center p-8 bg-red-500/10 border border-red-500/20 text-red-300 rounded-2xl max-w-md mx-auto text-sm">
           {error}
         </div>
-      ) : festivals.length === 0 ? (
-        <div className="text-center p-12 text-slate-500 text-sm">
-          No upcoming festivals logged in the calendar.
-        </div>
-      ) : (
-        <div className="space-y-6">
-          {festivals.map((fest) => (
-            <div
-              key={fest._id}
-              className="glass-panel p-6 md:p-8 rounded-3xl border border-slate-800/40 grid grid-cols-1 md:grid-cols-12 gap-6 hover:border-spiritual-orange/15 transition-all duration-300"
-            >
-              {/* Date Box */}
-              <div className="md:col-span-3 flex md:flex-col items-center md:justify-center justify-start gap-4 md:gap-2 bg-slate-950/40 border border-slate-800/30 p-4 rounded-2xl text-center md:h-fit">
-                <CalendarIcon className="w-5 h-5 text-spiritual-orange" />
-                <div>
-                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Date</p>
-                  <p className="text-lg font-bold text-white mt-1">
-                    {new Date(fest.date).toLocaleDateString(undefined, {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric'
-                    })}
-                  </p>
-                </div>
+      ) : panchang ? (
+        <div className="space-y-6 animate-fade-in">
+          <div className="glass-panel p-6 md:p-8 rounded-3xl border border-slate-800/40 hover:border-spiritual-orange/15 transition-all duration-300">
+            <div className="text-center mb-8 pb-6 border-b border-slate-800/50">
+              <h2 className="text-2xl font-bold text-white tracking-wide">
+                {new Date(panchang.date).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="p-4 bg-slate-900/50 rounded-2xl border border-slate-800/50 flex flex-col items-center">
+                <Moon className="w-6 h-6 text-spiritual-orange mb-2" />
+                <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Tithi</span>
+                <span className="text-white font-medium">{panchang.tithi}</span>
               </div>
+              <div className="p-4 bg-slate-900/50 rounded-2xl border border-slate-800/50 flex flex-col items-center">
+                <Star className="w-6 h-6 text-spiritual-gold mb-2" />
+                <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Nakshatra</span>
+                <span className="text-white font-medium">{panchang.nakshatra}</span>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-2xl border border-slate-800/50 flex flex-col items-center">
+                <Sun className="w-6 h-6 text-yellow-500 mb-2" />
+                <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Paksha</span>
+                <span className="text-white font-medium">{panchang.paksha}</span>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-2xl border border-slate-800/50 flex flex-col items-center">
+                <Sparkles className="w-6 h-6 text-purple-400 mb-2" />
+                <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Yoga</span>
+                <span className="text-white font-medium">{panchang.yoga}</span>
+              </div>
+            </div>
 
-              {/* Info Details */}
-              <div className="md:col-span-9 space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-xl md:text-2xl font-display font-bold text-white tracking-wide">
-                    {fest.title}
-                  </h3>
-                  {fest.associatedDeityIds && fest.associatedDeityIds.map((deity) => (
-                    <span
-                      key={deity._id}
-                      className="inline-flex items-center gap-1 bg-spiritual-orange/10 border border-spiritual-orange/20 text-spiritual-orange text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider"
-                    >
-                      <BookOpen className="w-3 h-3" /> {deity.name}
+            <div className="flex justify-center gap-8 mt-8">
+              <div className="flex items-center gap-2">
+                <Sunrise className="w-5 h-5 text-orange-400" />
+                <span className="text-sm text-slate-300">Sunrise: {panchang.sunrise}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Sunset className="w-5 h-5 text-orange-600" />
+                <span className="text-sm text-slate-300">Sunset: {panchang.sunset}</span>
+              </div>
+            </div>
+
+            {panchang.festivals && panchang.festivals.length > 0 && (
+              <div className="mt-8 pt-6 border-t border-slate-800/50">
+                <h3 className="text-lg font-bold text-white mb-4 text-center">Festivals Today</h3>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {panchang.festivals.map((fest, idx) => (
+                    <span key={idx} className="bg-spiritual-orange/10 border border-spiritual-orange/30 text-spiritual-orange px-4 py-2 rounded-full text-sm font-medium">
+                      {fest}
                     </span>
                   ))}
                 </div>
-
-                <p className="text-slate-300 text-sm leading-relaxed">{fest.description}</p>
-
-                {fest.significance && (
-                  <div className="text-xs bg-slate-950/20 p-3 rounded-xl border border-slate-900/30">
-                    <span className="font-semibold text-slate-400 uppercase tracking-widest text-[9px] block mb-1">
-                      Divine Significance
-                    </span>
-                    <span className="text-slate-400 italic leading-relaxed">{fest.significance}</span>
-                  </div>
-                )}
-
-                {fest.rituals && fest.rituals.length > 0 && (
-                  <div className="space-y-2">
-                    <h5 className="text-xs font-semibold text-white uppercase tracking-wider flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-spiritual-gold" /> Key Rituals & Pujas
-                    </h5>
-                    <ul className="list-disc pl-5 text-xs text-slate-400 space-y-1.5 leading-relaxed">
-                      {fest.rituals.map((ritual, idx) => (
-                        <li key={idx}>{ritual}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
-            </div>
-          ))}
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="text-center p-12 text-slate-500 text-sm">
+          Select a date to view Panchang details.
         </div>
       )}
     </div>

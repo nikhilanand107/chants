@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const seedData = require('./seeders/seedData');
+const initPanchangCron = require('./cron/panchangCron');
 
 // Load environment variables
 dotenv.config();
@@ -14,6 +15,9 @@ require('./config/cloudinary');
 connectDB().then(() => {
   // Run seeder to pre-populate gods, mantras, and aartis
   seedData();
+  
+  // Initialize cron jobs
+  initPanchangCron();
 });
 
 const app = express();
@@ -31,6 +35,7 @@ app.use('/api/v1/festivals', require('./routes/festivalRoutes'));
 app.use('/api/v1/temples', require('./routes/templeRoutes'));
 app.use('/api/v1/admin', require('./routes/adminRoutes'));
 app.use('/api/v1/books', require('./routes/bookRoutes'));
+app.use('/api/v1/panchang', require('./routes/panchangRoutes'));
 
 // API status check endpoint
 app.get('/', (req, res) => {

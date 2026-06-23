@@ -145,8 +145,8 @@ const seedData = async () => {
       vehicle: 'None',
       weapon: 'Kodanda (Bow)',
       festivals: ['Rama Navami', 'Diwali'],
-      thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Rama.jpg',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Rama.jpg',
+      thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Rama-Varuna.jpg',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Rama-Varuna.jpg',
       stories: [
         {
           title: 'Building the Ram Setu Bridge',
