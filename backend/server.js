@@ -23,7 +23,14 @@ connectDB().then(() => {
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://devdarsha.vercel.app"
+    ]
+  })
+);
 app.use(express.json());
 
 // Routes mapping
