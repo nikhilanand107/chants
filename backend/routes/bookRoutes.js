@@ -1,5 +1,31 @@
 const express = require('express');
 const router = express.Router();
+const https = require('https');
+
+// Helper to make https requests to Gutendex
+const fetchFromGutendex = (url) => {
+  return new Promise((resolve, reject) => {
+    https.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      }
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          try {
+            resolve({ ok: true, data: JSON.parse(data) });
+          } catch (e) {
+            resolve({ ok: false, status: res.statusCode });
+          }
+        } else {
+          resolve({ ok: false, status: res.statusCode });
+        }
+      });
+    }).on('error', reject);
+  });
+};
 
 // Helper function to map Gutenberg book formats to the structure expected by the frontend
 function mapGutenbergBook(book) {
@@ -46,17 +72,13 @@ function mapGutenbergBook(book) {
 // Get recent/popular books from Gutendex
 router.get('/recent', async (req, res, next) => {
   try {
-    const response = await fetch('https://gutendex.com/books/', {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-      }
-    });
+    const response = await fetchFromGutendex('https://gutendex.com/books/');
 
     if (!response.ok) {
       return res.json({ status: 'error', books: [] });
     }
 
-    const data = await response.json();
+    const data = response.data;
     const mappedBooks = (data.results || []).map(mapGutenbergBook).filter(Boolean);
     
     res.json({ status: 'success', books: mappedBooks });
@@ -70,17 +92,13 @@ router.get('/recent', async (req, res, next) => {
 router.get('/search/:query', async (req, res, next) => {
   try {
     const query = encodeURIComponent(req.params.query);
-    const response = await fetch(`https://gutendex.com/books/?search=${query}`, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-      }
-    });
+    const response = await fetchFromGutendex(`https://gutendex.com/books/?search=${query}`);
 
     if (!response.ok) {
       return res.json({ status: 'error', books: [] });
     }
 
-    const data = await response.json();
+    const data = response.data;
     const mappedBooks = (data.results || []).map(mapGutenbergBook).filter(Boolean);
     
     res.json({ status: 'success', books: mappedBooks });
@@ -94,17 +112,13 @@ router.get('/search/:query', async (req, res, next) => {
 router.get('/book/:id', async (req, res, next) => {
   try {
     const id = req.params.id;
-    const response = await fetch(`https://gutendex.com/books/${id}`, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-      }
-    });
+    const response = await fetchFromGutendex(`https://gutendex.com/books/${id}`);
 
     if (!response.ok) {
       return res.status(404).json({ status: 'error', message: 'Book not found' });
     }
 
-    const data = await response.json();
+    const data = response.data;
     const mappedBook = mapGutenbergBook(data);
     
     if (!mappedBook) {
