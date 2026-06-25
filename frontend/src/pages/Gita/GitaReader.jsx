@@ -170,10 +170,11 @@ const CHAPTERS_DATA = [
 // Map Open Library search result to app format
 function mapOpenLibraryBook(doc) {
   if (!doc) return null;
-  const coverId = doc.cover_i || (doc.cover_edition_key ? null : null);
+  const coverId = doc.cover_i;
   const iaId = doc.ia && doc.ia.length > 0 ? doc.ia[0] : null;
+  const isPublicScan = !!doc.public_scan_b;
   return {
-    id: doc.key, // e.g. "/works/OL45804W"
+    id: doc.key,
     ia: iaId,
     title: doc.title || 'Unknown Title',
     authors: doc.author_name ? doc.author_name.join(', ') : 'Unknown Author',
@@ -181,10 +182,12 @@ function mapOpenLibraryBook(doc) {
     year: doc.first_publish_year ? String(doc.first_publish_year) : 'N/A',
     subjects: doc.subject ? doc.subject.slice(0, 3).join(', ') : '',
     readUrl: iaId ? `https://archive.org/embed/${iaId}` : null,
-    downloadEpub: iaId ? `https://archive.org/download/${iaId}/${iaId}.epub` : null,
-    downloadPdf: iaId ? `https://archive.org/download/${iaId}/${iaId}.pdf` : null,
+    // Only show download links if book is a verified public scan (no login needed)
+    downloadPdf: (iaId && isPublicScan) ? `https://archive.org/download/${iaId}/${iaId}.pdf` : null,
+    downloadEpub: (iaId && isPublicScan) ? `https://archive.org/download/${iaId}/${iaId}.epub` : null,
     olUrl: `https://openlibrary.org${doc.key}`,
     hasFullText: !!doc.has_fulltext,
+    isPublicScan,
   };
 }
 
@@ -271,7 +274,7 @@ const GitaReader = () => {
     setLoadingLibrary(true);
     setErrorLibrary(null);
     try {
-      const response = await fetch('https://openlibrary.org/search.json?q=classic+literature&sort=rating&limit=20&fields=key,title,author_name,cover_i,first_publish_year,has_fulltext,ia,subject');
+      const response = await fetch('https://openlibrary.org/search.json?q=classic+literature&sort=rating&limit=20&fields=key,title,author_name,cover_i,first_publish_year,has_fulltext,ia,subject,public_scan_b');
       if (!response.ok) throw new Error('No books found.');
       const data = await response.json();
       if (data && data.docs) {
@@ -297,7 +300,7 @@ const GitaReader = () => {
     setErrorLibrary(null);
     try {
       const query = encodeURIComponent(librarySearchTerm);
-      const response = await fetch(`https://openlibrary.org/search.json?q=${query}&limit=20&fields=key,title,author_name,cover_i,first_publish_year,has_fulltext,ia,subject`);
+      const response = await fetch(`https://openlibrary.org/search.json?q=${query}&limit=20&fields=key,title,author_name,cover_i,first_publish_year,has_fulltext,ia,subject,public_scan_b`);
       if (!response.ok) throw new Error('Search failed');
       const data = await response.json();
       if (data && data.docs) {
@@ -368,7 +371,7 @@ const GitaReader = () => {
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              Read
+              Gita
             </button>
             <button
               onClick={() => setActiveTab('library')}
@@ -854,6 +857,16 @@ const GitaReader = () => {
                         className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-slate-700 hover:border-spiritual-orange/40 text-slate-300 hover:text-white text-xs font-semibold transition-all"
                       >
                         <Download className="w-3.5 h-3.5" /> Download EPUB
+                      </a>
+                    )}
+                    {!selectedBookDetail.downloadPdf && !selectedBookDetail.downloadEpub && (
+                      <a
+                        href={selectedBookDetail.ia ? `https://archive.org/details/${selectedBookDetail.ia}` : selectedBookDetail.olUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-spiritual-orange to-spiritual-gold text-white text-xs font-bold transition-all shadow-md"
+                      >
+                        <Download className="w-3.5 h-3.5" /> Borrow on Internet Archive
                       </a>
                     )}
                     <a

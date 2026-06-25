@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
               <Compass className="w-4 h-4 shrink-0" /> <span className="hidden sm:inline">Deities</span>
             </Link>
             <Link to="/gita" className="hover:text-spiritual-orange transition-colors flex items-center gap-1 text-xs md:text-sm">
-              <BookOpen className="w-4 h-4 shrink-0" /> <span className="hidden sm:inline">Gita</span>
+              <BookOpen className="w-4 h-4 shrink-0" /> <span className="hidden sm:inline">Read</span>
             </Link>
             <Link to="/festivals" className="hover:text-spiritual-orange transition-colors flex items-center gap-1 text-xs md:text-sm">
               <CalendarIcon className="w-4 h-4 shrink-0" /> <span className="hidden sm:inline">Calendar</span>
