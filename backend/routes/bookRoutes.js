@@ -136,29 +136,49 @@ const { Readable } = require('stream');
 
 // Proxy Gutenberg assets (images, epubs, html) to bypass ISP blocks
 router.get('/proxy', async (req, res) => {
-  const targetUrl = req.query.url;
+  let targetUrl = req.query.url;
   if (!targetUrl || !targetUrl.startsWith('http')) {
     return res.status(400).send('Invalid URL');
   }
 
   try {
-    const response = await fetch(targetUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
-      },
-      redirect: 'follow'
-    });
+    let response;
+    let maxRedirects = 5;
+    
+    while (maxRedirects > 0) {
+      response = await fetch(targetUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': '*/*'
+        },
+        redirect: 'manual'
+      });
 
-    if (!response.ok) {
-      return res.status(response.status).send('Error fetching from Gutenberg');
+      if (response.status >= 300 && response.status < 400 && response.headers.has('location')) {
+        let loc = response.headers.get('location');
+        if (!loc.startsWith('http')) {
+          loc = new URL(loc, targetUrl).toString();
+        }
+        targetUrl = loc;
+        maxRedirects--;
+      } else {
+        break;
+      }
+    }
+
+    if (!response || !response.ok) {
+      return res.status(response?.status || 500).send('Error fetching from target');
     }
 
     const contentType = response.headers.get('content-type');
-    if (contentType) res.setHeader('Content-Type', contentType);
+    if (contentType) res.setHeader('Content-Type', contentType.replace(/[^\x20-\x7E]/g, ''));
     
     const contentDisposition = response.headers.get('content-disposition');
-    if (contentDisposition) res.setHeader('Content-Disposition', contentDisposition);
+    if (contentDisposition) {
+      res.setHeader('Content-Disposition', contentDisposition.replace(/[^\x20-\x7E]/g, ''));
+    } else if (targetUrl.includes('.epub')) {
+      res.setHeader('Content-Disposition', 'attachment; filename="book.epub"');
+    }
 
     // Stream directly to the response to prevent memory overflow
     if (response.body) {
@@ -168,7 +188,7 @@ router.get('/proxy', async (req, res) => {
     }
   } catch (err) {
     console.error('Book Proxy Error:', err);
-    res.status(500).send('Failed to proxy request');
+    res.status(500).send('Failed to proxy request: ' + err.message);
   }
 });
 
