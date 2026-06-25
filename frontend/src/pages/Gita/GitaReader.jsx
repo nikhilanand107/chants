@@ -177,11 +177,24 @@ function mapGutenbergBook(book) {
   if (!book) return null;
 
   let downloadUrl = '';
+  let formatName = '';
   if (book.formats) {
-    downloadUrl = book.formats['application/epub+zip'] || 
-                  book.formats['text/plain; charset=utf-8'] || 
-                  book.formats['text/html'] || 
-                  Object.values(book.formats)[0] || '';
+    if (book.formats['application/pdf']) {
+      downloadUrl = book.formats['application/pdf'];
+      formatName = 'PDF';
+    } else if (book.formats['application/epub+zip']) {
+      downloadUrl = book.formats['application/epub+zip'];
+      formatName = 'EPUB';
+    } else if (book.formats['text/plain; charset=utf-8']) {
+      downloadUrl = book.formats['text/plain; charset=utf-8'];
+      formatName = 'Text File';
+    } else if (book.formats['text/html']) {
+      downloadUrl = book.formats['text/html'];
+      formatName = 'Web Page';
+    } else {
+      downloadUrl = Object.values(book.formats)[0] || '';
+      formatName = 'File';
+    }
   }
 
   let description = '';
@@ -203,6 +216,7 @@ function mapGutenbergBook(book) {
     image: book.formats && book.formats['image/jpeg'] ? getProxyUrl(book.formats['image/jpeg']) : '',
     url: book.formats && book.formats['text/html'] ? getProxyUrl(book.formats['text/html']) : '',
     download: getProxyUrl(downloadUrl),
+    formatName: formatName,
     publisher: 'Project Gutenberg',
     pages: 'N/A',
     year: book.authors && book.authors.length > 0 && book.authors[0].birth_year
@@ -751,18 +765,20 @@ const GitaReader = () => {
                     className="glass-panel rounded-2xl border border-slate-900 hover:border-spiritual-orange/20 transition-all duration-300 p-4 flex flex-col justify-between group cursor-pointer"
                   >
                     <div className="space-y-4">
-                      <div className="aspect-[3/4] rounded-lg overflow-hidden bg-slate-950 border border-slate-900 relative">
-                        {book.image ? (
+                      <div className="aspect-[3/4] rounded-lg overflow-hidden bg-slate-950 border border-slate-900 relative flex items-center justify-center">
+                        <div className="absolute inset-0 flex items-center justify-center text-slate-700 bg-slate-950 z-0">
+                          <BookOpen className="w-12 h-12" />
+                        </div>
+                        {book.image && (
                           <img
                             src={book.image}
                             alt={book.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-10"
                             loading="lazy"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
                           />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-slate-700 bg-slate-950">
-                            <BookOpen className="w-12 h-12" />
-                          </div>
                         )}
                       </div>
 
@@ -814,12 +830,20 @@ const GitaReader = () => {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                 {/* Book Image */}
                 <div className="md:col-span-4 flex justify-center">
-                  <div className="w-44 aspect-[3/4] rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                    <img
-                      src={selectedBookDetail.image}
-                      alt={selectedBookDetail.title}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-44 aspect-[3/4] rounded-xl overflow-hidden border border-slate-800 bg-slate-900 relative flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-700 bg-slate-950 z-0">
+                      <BookOpen className="w-12 h-12" />
+                    </div>
+                    {selectedBookDetail.image && (
+                      <img
+                        src={selectedBookDetail.image}
+                        alt={selectedBookDetail.title}
+                        className="w-full h-full object-cover relative z-10"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
 
@@ -868,7 +892,7 @@ const GitaReader = () => {
                         rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-spiritual-orange to-spiritual-gold hover:from-spiritual-orange-dark hover:to-spiritual-gold text-white text-xs font-bold transition-all shadow-md hover:shadow-spiritual-orange/20"
                       >
-                        <Download className="w-3.5 h-3.5" /> Get Book (EPUB / Text)
+                        <Download className="w-3.5 h-3.5" /> Download {selectedBookDetail.formatName}
                       </a>
                     )}
                     {selectedBookDetail.url && (
