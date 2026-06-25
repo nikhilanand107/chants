@@ -168,8 +168,7 @@ const CHAPTERS_DATA = [
 ];
 
 const getProxyUrl = (url) => {
-  if (!url) return '';
-  return `${API.defaults.baseURL}/books/proxy?url=${encodeURIComponent(url)}`;
+  return url; // Proxy disabled due to Gutenberg blocking Render IPs
 };
 
 // Helper function to map Gutenberg book formats to the structure expected by the frontend
