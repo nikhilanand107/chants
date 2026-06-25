@@ -132,6 +132,8 @@ router.get('/book/:id', async (req, res, next) => {
   }
 });
 
+const { Readable } = require('stream');
+
 // Proxy Gutenberg assets (images, epubs, html) to bypass ISP blocks
 router.get('/proxy', async (req, res) => {
   const targetUrl = req.query.url;
@@ -142,7 +144,8 @@ router.get('/proxy', async (req, res) => {
   try {
     const response = await fetch(targetUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
       },
       redirect: 'follow'
     });
@@ -157,9 +160,12 @@ router.get('/proxy', async (req, res) => {
     const contentDisposition = response.headers.get('content-disposition');
     if (contentDisposition) res.setHeader('Content-Disposition', contentDisposition);
 
-    // Some node fetch versions don't support Readable.fromWeb, so fallback to arrayBuffer
-    const buffer = await response.arrayBuffer();
-    res.send(Buffer.from(buffer));
+    // Stream directly to the response to prevent memory overflow
+    if (response.body) {
+      Readable.fromWeb(response.body).pipe(res);
+    } else {
+      res.end();
+    }
   } catch (err) {
     console.error('Book Proxy Error:', err);
     res.status(500).send('Failed to proxy request');
