@@ -167,61 +167,24 @@ const CHAPTERS_DATA = [
   }
 ];
 
-const getProxyUrl = (url) => {
-  return url; // Proxy disabled due to Gutenberg blocking Render IPs
-};
-
-// Helper function to map Gutenberg book formats to the structure expected by the frontend
-function mapGutenbergBook(book) {
-  if (!book) return null;
-
-  let downloadUrl = '';
-  let formatName = '';
-  if (book.formats) {
-    if (book.formats['application/pdf']) {
-      downloadUrl = book.formats['application/pdf'];
-      formatName = 'PDF';
-    } else if (book.formats['application/epub+zip']) {
-      downloadUrl = book.formats['application/epub+zip'];
-      formatName = 'EPUB';
-    } else if (book.formats['text/plain; charset=utf-8']) {
-      downloadUrl = book.formats['text/plain; charset=utf-8'];
-      formatName = 'Text File';
-    } else if (book.formats['text/html']) {
-      downloadUrl = book.formats['text/html'];
-      formatName = 'Web Page';
-    } else {
-      downloadUrl = Object.values(book.formats)[0] || '';
-      formatName = 'File';
-    }
-  }
-
-  let description = '';
-  if (book.summaries && book.summaries.length > 0) {
-    description = book.summaries[0];
-  } else if (book.subjects && book.subjects.length > 0) {
-    description = `Subjects: ${book.subjects.join(', ')}`;
-  } else {
-    description = 'No description available for this Project Gutenberg title.';
-  }
-
+// Map Open Library search result to app format
+function mapOpenLibraryBook(doc) {
+  if (!doc) return null;
+  const coverId = doc.cover_i || (doc.cover_edition_key ? null : null);
+  const iaId = doc.ia && doc.ia.length > 0 ? doc.ia[0] : null;
   return {
-    id: book.id,
-    title: book.title,
-    subtitle: book.subjects && book.subjects.length > 0 ? book.subjects.slice(0, 2).join(', ') : '',
-    authors: book.authors && book.authors.length > 0 
-      ? book.authors.map(a => a.name.split(', ').reverse().join(' ')).join(', ') 
-      : 'Unknown Author',
-    image: book.formats && book.formats['image/jpeg'] ? getProxyUrl(book.formats['image/jpeg']) : '',
-    url: book.formats && book.formats['text/html'] ? getProxyUrl(book.formats['text/html']) : '',
-    download: getProxyUrl(downloadUrl),
-    formatName: formatName,
-    publisher: 'Project Gutenberg',
-    pages: 'N/A',
-    year: book.authors && book.authors.length > 0 && book.authors[0].birth_year
-      ? `${book.authors[0].birth_year} - ${book.authors[0].death_year || 'Present'}`
-      : 'N/A',
-    description: description
+    id: doc.key, // e.g. "/works/OL45804W"
+    ia: iaId,
+    title: doc.title || 'Unknown Title',
+    authors: doc.author_name ? doc.author_name.join(', ') : 'Unknown Author',
+    image: coverId ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg` : '',
+    year: doc.first_publish_year ? String(doc.first_publish_year) : 'N/A',
+    subjects: doc.subject ? doc.subject.slice(0, 3).join(', ') : '',
+    readUrl: iaId ? `https://archive.org/embed/${iaId}` : null,
+    downloadEpub: iaId ? `https://archive.org/download/${iaId}/${iaId}.epub` : null,
+    downloadPdf: iaId ? `https://archive.org/download/${iaId}/${iaId}.pdf` : null,
+    olUrl: `https://openlibrary.org${doc.key}`,
+    hasFullText: !!doc.has_fulltext,
   };
 }
 
@@ -303,16 +266,16 @@ const GitaReader = () => {
     }
   }, [activeTab]);
 
-  // Fetch books for Library Section
+  // Fetch books for Library Section (Open Library)
   const fetchRecentBooks = async () => {
     setLoadingLibrary(true);
     setErrorLibrary(null);
     try {
-      const response = await fetch('https://gutendex.com/books/');
+      const response = await fetch('https://openlibrary.org/search.json?q=classic+literature&sort=rating&limit=20&fields=key,title,author_name,cover_i,first_publish_year,has_fulltext,ia,subject');
       if (!response.ok) throw new Error('No books found.');
       const data = await response.json();
-      if (data && data.results) {
-        setBooks(data.results.map(mapGutenbergBook).filter(Boolean));
+      if (data && data.docs) {
+        setBooks(data.docs.map(mapOpenLibraryBook).filter(Boolean));
       } else {
         throw new Error('No books found.');
       }
@@ -334,11 +297,11 @@ const GitaReader = () => {
     setErrorLibrary(null);
     try {
       const query = encodeURIComponent(librarySearchTerm);
-      const response = await fetch(`https://gutendex.com/books/?search=${query}`);
+      const response = await fetch(`https://openlibrary.org/search.json?q=${query}&limit=20&fields=key,title,author_name,cover_i,first_publish_year,has_fulltext,ia,subject`);
       if (!response.ok) throw new Error('Search failed');
       const data = await response.json();
-      if (data && data.results) {
-        setBooks(data.results.map(mapGutenbergBook).filter(Boolean));
+      if (data && data.docs) {
+        setBooks(data.docs.map(mapOpenLibraryBook).filter(Boolean));
       } else {
         setBooks([]);
       }
@@ -351,22 +314,13 @@ const GitaReader = () => {
   };
 
   const viewBookDetails = async (bookId) => {
-    setLoadingBookDetail(true);
-    try {
-      const response = await fetch(`https://gutendex.com/books/${bookId}`);
-      if (!response.ok) throw new Error('Book not found');
-      const data = await response.json();
-      const mapped = mapGutenbergBook(data);
-      if (mapped) {
-        setSelectedBookDetail(mapped);
-        localStorage.setItem('lastReadLibrary', JSON.stringify(mapped));
-        setLastReadLibrary(mapped);
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Could not fetch book details.');
-    } finally {
-      setLoadingBookDetail(false);
+    // bookId is an OL works key like /works/OL45804W
+    // Find in already-fetched list to avoid an extra API call
+    const found = books.find(b => b.id === bookId);
+    if (found) {
+      setSelectedBookDetail(found);
+      localStorage.setItem('lastReadLibrary', JSON.stringify(found));
+      setLastReadLibrary(found);
     }
   };
 
@@ -414,7 +368,7 @@ const GitaReader = () => {
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              Srimad Bhagavad Gita
+              Read
             </button>
             <button
               onClick={() => setActiveTab('library')}
@@ -852,8 +806,8 @@ const GitaReader = () => {
                     <h2 className="text-xl md:text-2xl font-display font-bold text-white leading-tight">
                       {selectedBookDetail.title}
                     </h2>
-                    {selectedBookDetail.subtitle && (
-                      <p className="text-xs text-slate-400 mt-1">{selectedBookDetail.subtitle}</p>
+                    {selectedBookDetail.subjects && (
+                      <p className="text-xs text-slate-400 mt-1 line-clamp-1">{selectedBookDetail.subjects}</p>
                     )}
                   </div>
 
@@ -862,71 +816,71 @@ const GitaReader = () => {
                       <span className="text-slate-500 block">Author(s)</span>
                       <span className="text-slate-300 font-medium">{selectedBookDetail.authors}</span>
                     </div>
-                    {selectedBookDetail.publisher && (
+                    {selectedBookDetail.year && selectedBookDetail.year !== 'N/A' && (
                       <div>
-                        <span className="text-slate-500 block">Publisher</span>
-                        <span className="text-slate-300 font-medium">{selectedBookDetail.publisher}</span>
-                      </div>
-                    )}
-                    {selectedBookDetail.pages && (
-                      <div>
-                        <span className="text-slate-500 block">Pages</span>
-                        <span className="text-slate-300 font-medium">{selectedBookDetail.pages}</span>
-                      </div>
-                    )}
-                    {selectedBookDetail.year && (
-                      <div>
-                        <span className="text-slate-500 block">Year</span>
+                        <span className="text-slate-500 block">First Published</span>
                         <span className="text-slate-300 font-medium">{selectedBookDetail.year}</span>
                       </div>
                     )}
+                    <div>
+                      <span className="text-slate-500 block">Source</span>
+                      <span className="text-slate-300 font-medium">Open Library / Internet Archive</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-500 block">Full Text</span>
+                      <span className={`font-medium ${selectedBookDetail.hasFullText ? 'text-green-400' : 'text-slate-500'}`}>
+                        {selectedBookDetail.hasFullText ? 'Available' : 'Not Available'}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                    {selectedBookDetail.download && (
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2 flex-wrap">
+                    {selectedBookDetail.downloadPdf && (
                       <a
-                        href={selectedBookDetail.download}
+                        href={selectedBookDetail.downloadPdf}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-spiritual-orange to-spiritual-gold hover:from-spiritual-orange-dark hover:to-spiritual-gold text-white text-xs font-bold transition-all shadow-md hover:shadow-spiritual-orange/20"
                       >
-                        <Download className="w-3.5 h-3.5" /> Download {selectedBookDetail.formatName}
+                        <Download className="w-3.5 h-3.5" /> Download PDF
                       </a>
                     )}
-                    {selectedBookDetail.url && (
+                    {selectedBookDetail.downloadEpub && (
                       <a
-                        href={selectedBookDetail.url}
+                        href={selectedBookDetail.downloadEpub}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-5 py-2.5 rounded-full border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white text-xs font-semibold text-center transition-all"
+                        className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-slate-700 hover:border-spiritual-orange/40 text-slate-300 hover:text-white text-xs font-semibold transition-all"
                       >
-                        Read Online (HTML)
+                        <Download className="w-3.5 h-3.5" /> Download EPUB
                       </a>
                     )}
+                    <a
+                      href={selectedBookDetail.olUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white text-xs font-semibold transition-all"
+                    >
+                      View on Open Library
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Description */}
-              {selectedBookDetail.description && (
-                <div className="border-t border-slate-900/80 pt-6 text-left space-y-2">
-                  <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Book Description</h4>
-                  <p className="text-xs md:text-sm text-slate-400 font-sans leading-relaxed">
-                    {selectedBookDetail.description}
-                  </p>
+              {/* Embedded Reader */}
+              {selectedBookDetail.readUrl && (
+                <div className="border-t border-slate-900/80 pt-6 space-y-3">
+                  <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">Read Online</h4>
+                  <iframe
+                    src={selectedBookDetail.readUrl}
+                    className="w-full rounded-xl border border-slate-800"
+                    style={{ height: '400px' }}
+                    title={selectedBookDetail.title}
+                    allowFullScreen
+                  />
                 </div>
               )}
-            </div>
-          </div>
-        )}
-
-        {/* Details Loader Modal */}
-        {loadingBookDetail && (
-          <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-xs">
-            <div className="flex flex-col items-center gap-3">
-              <Loader2 className="w-10 h-10 text-spiritual-orange animate-spin" />
-              <span className="text-xs text-slate-400">Loading catalog entry...</span>
             </div>
           </div>
         )}
