@@ -167,6 +167,11 @@ const CHAPTERS_DATA = [
   }
 ];
 
+const getProxyUrl = (url) => {
+  if (!url) return '';
+  return `${API.defaults.baseURL}/books/proxy?url=${encodeURIComponent(url)}`;
+};
+
 // Helper function to map Gutenberg book formats to the structure expected by the frontend
 function mapGutenbergBook(book) {
   if (!book) return null;
@@ -195,9 +200,9 @@ function mapGutenbergBook(book) {
     authors: book.authors && book.authors.length > 0 
       ? book.authors.map(a => a.name.split(', ').reverse().join(' ')).join(', ') 
       : 'Unknown Author',
-    image: book.formats && book.formats['image/jpeg'] ? book.formats['image/jpeg'] : '',
-    url: book.formats && book.formats['text/html'] ? book.formats['text/html'] : '',
-    download: downloadUrl,
+    image: book.formats && book.formats['image/jpeg'] ? getProxyUrl(book.formats['image/jpeg']) : '',
+    url: book.formats && book.formats['text/html'] ? getProxyUrl(book.formats['text/html']) : '',
+    download: getProxyUrl(downloadUrl),
     publisher: 'Project Gutenberg',
     pages: 'N/A',
     year: book.authors && book.authors.length > 0 && book.authors[0].birth_year
