@@ -167,6 +167,46 @@ const CHAPTERS_DATA = [
   }
 ];
 
+// Helper function to map Gutenberg book formats to the structure expected by the frontend
+function mapGutenbergBook(book) {
+  if (!book) return null;
+
+  let downloadUrl = '';
+  if (book.formats) {
+    downloadUrl = book.formats['application/epub+zip'] || 
+                  book.formats['text/plain; charset=utf-8'] || 
+                  book.formats['text/html'] || 
+                  Object.values(book.formats)[0] || '';
+  }
+
+  let description = '';
+  if (book.summaries && book.summaries.length > 0) {
+    description = book.summaries[0];
+  } else if (book.subjects && book.subjects.length > 0) {
+    description = `Subjects: ${book.subjects.join(', ')}`;
+  } else {
+    description = 'No description available for this Project Gutenberg title.';
+  }
+
+  return {
+    id: book.id,
+    title: book.title,
+    subtitle: book.subjects && book.subjects.length > 0 ? book.subjects.slice(0, 2).join(', ') : '',
+    authors: book.authors && book.authors.length > 0 
+      ? book.authors.map(a => a.name.split(', ').reverse().join(' ')).join(', ') 
+      : 'Unknown Author',
+    image: book.formats && book.formats['image/jpeg'] ? book.formats['image/jpeg'] : '',
+    url: book.formats && book.formats['text/html'] ? book.formats['text/html'] : '',
+    download: downloadUrl,
+    publisher: 'Project Gutenberg',
+    pages: 'N/A',
+    year: book.authors && book.authors.length > 0 && book.authors[0].birth_year
+      ? `${book.authors[0].birth_year} - ${book.authors[0].death_year || 'Present'}`
+      : 'N/A',
+    description: description
+  };
+}
+
 const GitaReader = () => {
   // Navigation Tabs: 'gita' or 'library'
   const [activeTab, setActiveTab] = useState('gita');
@@ -187,6 +227,16 @@ const GitaReader = () => {
   const [errorLibrary, setErrorLibrary] = useState(null);
   const [selectedBookDetail, setSelectedBookDetail] = useState(null);
   const [loadingBookDetail, setLoadingBookDetail] = useState(false);
+  const [lastReadLibrary, setLastReadLibrary] = useState(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('lastReadLibrary');
+    if (saved) {
+      try {
+        setLastReadLibrary(JSON.parse(saved));
+      } catch(e) {}
+    }
+  }, []);
 
   // Fetch verse data (Gita Tab)
   useEffect(() => {
@@ -240,15 +290,17 @@ const GitaReader = () => {
     setLoadingLibrary(true);
     setErrorLibrary(null);
     try {
-      const response = await API.get('/books/recent');
-      if (response.data && response.data.books) {
-        setBooks(response.data.books);
+      const response = await fetch('https://gutendex.com/books/');
+      if (!response.ok) throw new Error('No books found.');
+      const data = await response.json();
+      if (data && data.results) {
+        setBooks(data.results.map(mapGutenbergBook).filter(Boolean));
       } else {
         throw new Error('No books found.');
       }
     } catch (err) {
       console.error(err);
-      setErrorLibrary('Could not connect to library. Make sure backend is running.');
+      setErrorLibrary('Could not fetch books from catalog.');
     } finally {
       setLoadingLibrary(false);
     }
@@ -263,9 +315,12 @@ const GitaReader = () => {
     setLoadingLibrary(true);
     setErrorLibrary(null);
     try {
-      const response = await API.get(`/books/search/${librarySearchTerm}`);
-      if (response.data && response.data.books) {
-        setBooks(response.data.books);
+      const query = encodeURIComponent(librarySearchTerm);
+      const response = await fetch(`https://gutendex.com/books/?search=${query}`);
+      if (!response.ok) throw new Error('Search failed');
+      const data = await response.json();
+      if (data && data.results) {
+        setBooks(data.results.map(mapGutenbergBook).filter(Boolean));
       } else {
         setBooks([]);
       }
@@ -280,9 +335,14 @@ const GitaReader = () => {
   const viewBookDetails = async (bookId) => {
     setLoadingBookDetail(true);
     try {
-      const response = await API.get(`/books/book/${bookId}`);
-      if (response.data) {
-        setSelectedBookDetail(response.data);
+      const response = await fetch(`https://gutendex.com/books/${bookId}`);
+      if (!response.ok) throw new Error('Book not found');
+      const data = await response.json();
+      const mapped = mapGutenbergBook(data);
+      if (mapped) {
+        setSelectedBookDetail(mapped);
+        localStorage.setItem('lastReadLibrary', JSON.stringify(mapped));
+        setLastReadLibrary(mapped);
       }
     } catch (err) {
       console.error(err);
@@ -636,6 +696,30 @@ const GitaReader = () => {
                 </button>
               </form>
             </div>
+
+            {/* Continue Reading Banner */}
+            {lastReadLibrary && !librarySearchTerm && (
+              <div className="max-w-4xl mx-auto mb-8 p-4 bg-slate-900/80 border border-spiritual-orange/30 rounded-2xl flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-left">
+                  <div className="p-3 bg-spiritual-orange/20 rounded-xl text-spiritual-orange hidden sm:block">
+                    <BookOpen className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-spiritual-orange font-bold uppercase tracking-wider">Continue Reading</p>
+                    <h4 className="text-white font-semibold text-sm line-clamp-1">
+                      {lastReadLibrary.title}
+                    </h4>
+                    <p className="text-slate-400 text-xs">By {lastReadLibrary.authors}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => viewBookDetails(lastReadLibrary.id)}
+                  className="px-6 py-2.5 bg-spiritual-orange text-white text-xs font-bold rounded-full hover:bg-spiritual-orange-dark transition-colors shadow-md shadow-spiritual-orange/20 whitespace-nowrap mt-4 sm:mt-0"
+                >
+                  Resume Book
+                </button>
+              </div>
+            )}
 
             {/* Content grid */}
             {loadingLibrary ? (
