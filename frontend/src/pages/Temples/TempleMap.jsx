@@ -10,6 +10,8 @@ const TempleMap = () => {
   const [radius, setRadius] = useState(50000); // Default: 50 KM (50,000 meters)
   const [locationStatus, setLocationStatus] = useState('idle'); // 'idle', 'detecting', 'success', 'failed'
 
+  // const [failedImages, setFailedImages] = useState({});
+
   const fetchTemples = async (lat = null, lng = null, rad = 50000) => {
     try {
       setLoading(true);
@@ -141,7 +143,7 @@ const TempleMap = () => {
                 className="glass-panel rounded-3xl overflow-hidden flex flex-col hover:border-spiritual-orange/15 transition-all duration-300"
               >
                 {/* Image */}
-                <div className="h-44 bg-slate-950 overflow-hidden relative">
+                {/* <div className="h-44 bg-slate-950 overflow-hidden relative">
                   <img
                     src={temple.imageUrl || 'https://images.unsplash.com/photo-1627896157734-4d7d4388f24b?auto=format&fit=crop&w=600&q=80'}
                     alt={temple.name}
@@ -154,7 +156,7 @@ const TempleMap = () => {
                       </span>
                     )}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Content */}
                 <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
