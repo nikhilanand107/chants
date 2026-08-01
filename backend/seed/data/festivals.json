@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Ganesh Chaturthi",
+    "description": "A 10-day grand festival honoring the birth of Lord Ganesha.",
+    "date": "2026-09-15T00:00:00.000Z",
+    "associatedDeitySlugs": ["lord-ganesha"],
+    "rituals": [
+      "Clay Ganesha idol installation in homes and public pandals",
+      "Chanting Ganesha Atharvashirsha",
+      "Modak sweets offerings (Ganesha's favorite)",
+      "Ganesh Visarjan (submerging idol in water body)"
+    ],
+    "significance": "Celebrates the arrival of Ganesha to Earth from Kailash, bringing wisdom, prosperity, and obstacle removal."
+  },
+  {
+    "title": "Maha Shivratri",
+    "description": "The great night of Lord Shiva celebrated annually in reverence.",
+    "date": "2027-03-06T00:00:00.000Z",
+    "associatedDeitySlugs": ["lord-shiva"],
+    "rituals": [
+      "All-night fasting and meditative vigil (Jagaran)",
+      "Bathing the Shiva Lingam with water, milk, honey, and Bilva leaves"
+    ],
+    "significance": "Signifies the night Lord Shiva performed the cosmic dance of creation and destruction, and married Goddess Parvati."
+  },
+  {
+    "title": "Durga Puja & Navratri",
+    "description": "The nine-night festival celebrating Goddess Durga's victory over Mahishasura.",
+    "date": "2026-10-10T00:00:00.000Z",
+    "associatedDeitySlugs": ["goddess-durga"],
+    "rituals": [
+      "Fasting during the nine days and worshipping the nine avatars of Durga",
+      "Performing Garba/Dandiya dances",
+      "Reciting Durga Saptashati and Durga Chalisa"
+    ],
+    "significance": "Celebrates the triumph of divine energy and good over evil."
+  }
+]

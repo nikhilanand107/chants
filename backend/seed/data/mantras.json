@@ -1,0 +1,421 @@
+[
+  {
+    "title": "Naam Japa",
+    "deitySlug": "naam",
+    "sanskritText": "राम",
+    "transliteration": "Ram",
+    "meaning": "Continuous chanting of the Lord's name.",
+    "explanation": "A simple but powerful practice of repeatedly chanting the name of the deity to cultivate devotion and focus.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "benefits": [
+      "Cultivates deep devotion",
+      "Brings peace and tranquility",
+      "Helps in concentration"
+    ]
+  },
+  {
+    "title": "Shiva Panchakshari Mantra",
+    "deitySlug": "lord-shiva",
+    "sanskritText": "ॐ नमः शिवाय",
+    "transliteration": "Om Namah Shivaya",
+    "meaning": "I bow down to Lord Shiva (the inner self).",
+    "explanation": "The most sacred mantra of Shiva, representing the five elements (Na-Mah-Shi-Va-Ya) of earth, water, fire, air, and space.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "benefits": [
+      "Purifies the mind and soul",
+      "Increases focus and concentration",
+      "Calms the nervous system"
+    ]
+  },
+  {
+    "title": "Ganesha Vakratunda Mantra",
+    "deitySlug": "lord-ganesha",
+    "sanskritText": "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।\nनिर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥",
+    "transliteration": "Vakratunda Mahakaya Suryakoti Samaprabha\nNirvighnam Kuru Me Deva Sarva-Karyeshu Sarvada",
+    "meaning": "O Lord Ganesha, with the curved trunk and massive body, whose brilliance equals ten million suns, please make all my endeavors free of obstacles, always.",
+    "explanation": "Traditionally chanted at the beginning of any auspicious ceremony or work to clear the path of obstacles.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    "benefits": [
+      "Removes obstacles in education, career, and life",
+      "Invokes success and intelligence"
+    ]
+  },
+  {
+    "title": "Hanuman Moola Mantra",
+    "deitySlug": "lord-hanuman",
+    "sanskritText": "ॐ हं हनुमते नमः",
+    "transliteration": "Om Ham Hanumate Namah",
+    "meaning": "I bow down and surrender to Lord Hanuman, the embodiment of courage and strength.",
+    "explanation": "A potent invocation of Hanuman's energy, bestowing physical stamina, willpower, and protection from fears.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    "benefits": [
+      "Boosts confidence and willpower",
+      "Dispels fear, anxiety, and depression"
+    ]
+  },
+  {
+    "title": "Durga Mantra (Sarva Mangala)",
+    "deitySlug": "goddess-durga",
+    "sanskritText": "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके।\nशरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते॥",
+    "transliteration": "Sarva Mangala Mangalye Shive Sarvartha Sadhike\nSharanye Tryambake Gauri Narayani Namostute",
+    "meaning": "Adorations to the auspicious one who bestows all auspiciousness, the consort of Shiva, who fulfills all goals, the protector, the three-eyed Gauri, Narayani, we bow to You.",
+    "explanation": "Chanted to request protection, blessings, and auspiciousness from Goddess Durga.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    "benefits": [
+      "Bestows auspiciousness in all ventures",
+      "Protects from negative energies and obstacles"
+    ]
+  },
+  {
+    "title": "Krishna Maha Mantra",
+    "deitySlug": "lord-krishna",
+    "sanskritText": "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे।\nहरे राम हरे राम राम राम हरे हरे॥",
+    "transliteration": "Hare Krishna Hare Krishna Krishna Krishna Hare Hare\nHare Rama Hare Rama Ram Ram Hare Hare",
+    "meaning": "O Lord, O energy of the Lord, please engage me in Your loving service.",
+    "explanation": "The greatest chanting mantra for meditation and emotional release, praised in the Upanishads.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+    "benefits": [
+      "Brings immense peace and spiritual joy",
+      "Cleanses the mind of stressful thoughts"
+    ]
+  },
+  {
+    "title": "Rama Taraka Mantra",
+    "deitySlug": "lord-rama",
+    "sanskritText": "श्री राम जय राम जय जय राम",
+    "transliteration": "Sri Rama Jaya Rama Jaya Jaya Rama",
+    "meaning": "Victory to Lord Rama, victory to the ultimate divine consciousness.",
+    "explanation": "A simple, highly powerful chanting mantra that helps establish mental peace and devotion.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+    "benefits": [
+      "Calms the agitated mind",
+      "Brings harmony and peace into the household"
+    ]
+  },
+  {
+    "title": "Lakshmi Gayatri Mantra",
+    "deitySlug": "goddess-lakshmi",
+    "sanskritText": "ॐ श्री महालक्ष्म्यै च विद्महे विष्णु पत्न्यै च धीमहि।\nतन्नो लक्ष्मी प्रचोदयात्॥",
+    "transliteration": "Om Shree Maha Lakshmyai Cha Vidmahe Vishnu Patnyai Cha Dheemahi\nTanno Lakshmi Prachodayat",
+    "meaning": "Let us meditate on the great Goddess Lakshmi, the consort of Lord Vishnu. May that Goddess of wealth and prosperity inspire and illuminate our intellect.",
+    "explanation": "A prayer requesting material abundance, beauty, and wisdom.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+    "benefits": [
+      "Attracts wealth, success, and prosperity",
+      "Brings peace and positive vibrations"
+    ]
+  },
+  {
+    "title": "Saraswati Vandana Mantra",
+    "deitySlug": "goddess-saraswati",
+    "sanskritText": "ॐ ऐं सरस्वत्यै नमः",
+    "transliteration": "Om Aim Saraswatyai Namah",
+    "meaning": "Salutations and bowing to Goddess Saraswati, the embodiment of wisdom.",
+    "explanation": "A short seed (beej) mantra chanted by students and creative artists for focus and intellect.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+    "benefits": [
+      "Improves memory power and focus",
+      "Inspires artistic creativity and speech"
+    ]
+  },
+  {
+    "title": "Vishnu Gayatri Mantra",
+    "deitySlug": "lord-vishnu",
+    "sanskritText": "ॐ नारायणाय विद्महे वासुदेवाय धीमहि।\nतन्नो विष्णुः प्रचोदयात्॥",
+    "transliteration": "Om Narayanaya Vidmahe Vasudevaya Dheemahi\nTanno Vishnu Prachodayat",
+    "meaning": "Let us meditate on Lord Narayana, the supreme being. May Lord Vishnu inspire and illuminate our mind.",
+    "explanation": "Chanted for peace, prosperity, and the realization of the ultimate truth.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+    "benefits": [
+      "Brings peace and spiritual enlightenment",
+      "Removes obstacles and negative energy"
+    ]
+  },
+  {
+    "title": "Surya Beej Mantra",
+    "deitySlug": "lord-surya",
+    "sanskritText": "ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः",
+    "transliteration": "Om Hraam Hreem Hroum Sah Suryaya Namah",
+    "meaning": "I offer my salutations to the great Sun God.",
+    "explanation": "A powerful seed mantra to invoke the energy and blessings of the Sun God for health and vitality.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+    "benefits": [
+      "Improves health and vitality",
+      "Brings success and fame",
+      "Enhances leadership qualities"
+    ]
+  },
+  {
+    "title": "Kali Mantra",
+    "deitySlug": "goddess-durga",
+    "sanskritText": "ॐ क्रीं कालिकायै नमः",
+    "transliteration": "Om Kreem Kalikayai Namah",
+    "meaning": "I bow to Goddess Kali, the fierce form of divine energy.",
+    "explanation": "Chanted to invoke Goddess Kali's protection and to destroy ego and ignorance.",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+    "benefits": [
+      "Destroys ego and negative forces",
+      "Provides immense courage and protection"
+    ]
+  },
+  {
+    "title": "Ardhanarishvara Mantra",
+    "deitySlug": "lord-shiva",
+    "sanskritText": "ॐ अर्धनारीश्वराय नमः",
+    "transliteration": "Om Ardhanarishvaraya Namah",
+    "meaning": "Salutations to Ardhanarishvara, the divine union of Shiva and Shakti.",
+    "explanation": "Represents balance between masculine and feminine energies.",
+    "benefits": [
+      "Harmony",
+      "Inner balance",
+      "Healthy relationships"
+    ]
+  },
+  {
+    "title": "Dakshinamurthy Mantra",
+    "deitySlug": "lord-shiva",
+    "sanskritText": "ॐ नमो भगवते दक्षिणामूर्तये",
+    "transliteration": "Om Namo Bhagavate Dakshinamurtaye",
+    "meaning": "Salutations to Lord Dakshinamurthy.",
+    "explanation": "Invokes the supreme teacher form of Shiva.",
+    "benefits": [
+      "Knowledge",
+      "Wisdom",
+      "Spiritual understanding"
+    ]
+  },
+  {
+    "title": "Bhairava Mantra",
+    "deitySlug": "lord-shiva",
+    "sanskritText": "ॐ कालभैरवाय नमः",
+    "transliteration": "Om Kalabhairavaya Namah",
+    "meaning": "Salutations to Lord Kala Bhairava.",
+    "explanation": "Invokes Lord Bhairava for protection.",
+    "benefits": [
+      "Protection",
+      "Fearlessness",
+      "Removes obstacles"
+    ]
+  },
+  {
+    "title": "Parashurama Mantra",
+    "deitySlug": "lord-parashurama",
+    "sanskritText": "ॐ जामदग्न्याय विद्महे",
+    "transliteration": "Om Jamadagnyaya Vidmahe",
+    "meaning": "Meditation on Lord Parashurama.",
+    "explanation": "Invokes strength and righteousness.",
+    "benefits": [
+      "Courage",
+      "Justice",
+      "Discipline"
+    ]
+  },
+  {
+    "title": "Balarama Mantra",
+    "deitySlug": "lord-balarama",
+    "sanskritText": "ॐ बलरामाय नमः",
+    "transliteration": "Om Balaramaya Namah",
+    "meaning": "Salutations to Lord Balarama.",
+    "explanation": "Invokes physical and mental strength.",
+    "benefits": [
+      "Strength",
+      "Stability",
+      "Confidence"
+    ]
+  },
+  {
+    "title": "Radha Mantra",
+    "deitySlug": "goddess-radha",
+    "sanskritText": "ॐ राधिकायै नमः",
+    "transliteration": "Om Radhikayai Namah",
+    "meaning": "Salutations to Shri Radha.",
+    "explanation": "Enhances divine love and devotion.",
+    "benefits": [
+      "Love",
+      "Devotion",
+      "Compassion"
+    ]
+  },
+  {
+    "title": "Sita Mantra",
+    "deitySlug": "goddess-sita",
+    "sanskritText": "ॐ सीतायै नमः",
+    "transliteration": "Om Sitayai Namah",
+    "meaning": "Salutations to Goddess Sita.",
+    "explanation": "Invokes purity and patience.",
+    "benefits": [
+      "Peace",
+      "Patience",
+      "Family harmony"
+    ]
+  },
+  {
+    "title": "Parvati Mantra",
+    "deitySlug": "goddess-parvati",
+    "sanskritText": "ॐ पार्वत्यै नमः",
+    "transliteration": "Om Parvatyai Namah",
+    "meaning": "Salutations to Goddess Parvati.",
+    "explanation": "Invokes divine motherhood and blessings.",
+    "benefits": [
+      "Marital bliss",
+      "Strength",
+      "Love"
+    ]
+  },
+  {
+    "title": "Nandi Mantra",
+    "deitySlug": "lord-shiva",
+    "sanskritText": "ॐ नन्दीश्वराय नमः",
+    "transliteration": "Om Nandishvaraya Namah",
+    "meaning": "Salutations to Nandi.",
+    "explanation": "Invokes devotion and discipline.",
+    "benefits": [
+      "Loyalty",
+      "Devotion",
+      "Mental focus"
+    ]
+  },
+  {
+    "title": "Kubera Mantra",
+    "deitySlug": "lord-kubera",
+    "sanskritText": "ॐ यक्षाय कुबेराय वैश्रवणाय नमः",
+    "transliteration": "Om Yakshaya Kuberaya Vaishravanaya Namah",
+    "meaning": "Salutations to Lord Kubera.",
+    "explanation": "Prayer for prosperity.",
+    "benefits": [
+      "Wealth",
+      "Prosperity",
+      "Success"
+    ]
+  },
+  {
+    "title": "Agni Mantra",
+    "deitySlug": "lord-agni",
+    "sanskritText": "ॐ अग्नये नमः",
+    "transliteration": "Om Agnaye Namah",
+    "meaning": "Salutations to Agni Dev.",
+    "explanation": "Invokes the sacred fire.",
+    "benefits": [
+      "Purification",
+      "Energy",
+      "Vitality"
+    ]
+  },
+  {
+    "title": "Vayu Mantra",
+    "deitySlug": "lord-vayu",
+    "sanskritText": "ॐ वायवे नमः",
+    "transliteration": "Om Vayave Namah",
+    "meaning": "Salutations to Vayu Dev.",
+    "explanation": "Prayer to the wind deity.",
+    "benefits": [
+      "Health",
+      "Vitality",
+      "Breath control"
+    ]
+  },
+  {
+    "title": "Varuna Mantra",
+    "deitySlug": "lord-varuna",
+    "sanskritText": "ॐ वरुणाय नमः",
+    "transliteration": "Om Varunaya Namah",
+    "meaning": "Salutations to Varuna Dev.",
+    "explanation": "Invokes purity and blessings.",
+    "benefits": [
+      "Purity",
+      "Peace",
+      "Prosperity"
+    ]
+  },
+  {
+    "title": "Indra Mantra",
+    "deitySlug": "lord-indra",
+    "sanskritText": "ॐ इन्द्राय नमः",
+    "transliteration": "Om Indraya Namah",
+    "meaning": "Salutations to Lord Indra.",
+    "explanation": "Prayer to the king of Devas.",
+    "benefits": [
+      "Leadership",
+      "Confidence",
+      "Success"
+    ]
+  },
+  {
+    "title": "Brahma Mantra",
+    "deitySlug": "lord-brahma",
+    "sanskritText": "ॐ ब्रह्मणे नमः",
+    "transliteration": "Om Brahmane Namah",
+    "meaning": "Salutations to Lord Brahma.",
+    "explanation": "Invokes the creator of the universe.",
+    "benefits": [
+      "Creativity",
+      "Knowledge",
+      "Wisdom"
+    ]
+  },
+  {
+    "title": "Dhanvantari Mantra",
+    "deitySlug": "lord-dhanvantari",
+    "sanskritText": "ॐ नमो भगवते वासुदेवाय धन्वंतरये नमः",
+    "transliteration": "Om Namo Bhagavate Vasudevaya Dhanvantaraye Namah",
+    "meaning": "Salutations to Lord Dhanvantari.",
+    "explanation": "Prayer for health and healing.",
+    "benefits": [
+      "Healing",
+      "Health",
+      "Long life"
+    ]
+  },
+  {
+    "title": "Ganga Mantra",
+    "deitySlug": "goddess-ganga",
+    "sanskritText": "ॐ श्री गंगायै नमः",
+    "transliteration": "Om Shri Gangayai Namah",
+    "meaning": "Salutations to Mother Ganga.",
+    "explanation": "Invokes purification and grace.",
+    "benefits": [
+      "Purification",
+      "Peace",
+      "Spiritual merit"
+    ]
+  },
+  {
+    "title": "Yamuna Mantra",
+    "deitySlug": "goddess-yamuna",
+    "sanskritText": "ॐ यमुनायै नमः",
+    "transliteration": "Om Yamunayai Namah",
+    "meaning": "Salutations to Goddess Yamuna.",
+    "explanation": "Prayer to the sacred river Yamuna.",
+    "benefits": [
+      "Purity",
+      "Devotion",
+      "Peace"
+    ]
+  },
+  {
+    "title": "Narmada Mantra",
+    "deitySlug": "goddess-narmada",
+    "sanskritText": "ॐ नर्मदायै नमः",
+    "transliteration": "Om Narmadayai Namah",
+    "meaning": "Salutations to Mother Narmada.",
+    "explanation": "Invokes blessings of the sacred river.",
+    "benefits": [
+      "Purification",
+      "Protection",
+      "Prosperity"
+    ]
+  },
+  {
+    "title": "Shitala Mata Mantra",
+    "deitySlug": "goddess-shitala",
+    "sanskritText": "ॐ शीतलायै नमः",
+    "transliteration": "Om Shitalayai Namah",
+    "meaning": "Salutations to Goddess Shitala.",
+    "explanation": "Prayer for health and protection.",
+    "benefits": [
+      "Good health",
+      "Protection",
+      "Well-being"
+    ]
+  }
+]

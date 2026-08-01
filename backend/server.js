@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const seedData = require('./seeders/seedData');
 const initPanchangCron = require('./cron/panchangCron');
 const initKeepAlive = require('./cron/keepAliveCron');
 
@@ -14,8 +13,6 @@ require('./config/cloudinary');
 
 // Connect to Database
 connectDB().then(() => {
-  // Run seeder to pre-populate gods, mantras, and aartis
-  seedData();
   
   // Initialize cron jobs
   initPanchangCron();

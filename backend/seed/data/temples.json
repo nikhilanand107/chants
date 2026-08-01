@@ -1,0 +1,707 @@
+[
+  {
+    "name": "Kashi Vishwanath Temple",
+    "description": "One of the most famous Hindu temples dedicated to Lord Shiva, located on the western bank of holy river Ganga.",
+    "address": "Lahori Tola, Varanasi, Uttar Pradesh 221001, India",
+    "timing": "3:00 AM - 11:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://images.unsplash.com/photo-1627896157734-4d7d4388f24b?auto=format&fit=crop&w=600&q=80",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        83.0104,
+        25.3109
+      ]
+    }
+  },
+  {
+    "name": "Shree Siddhivinayak Ganapati Temple",
+    "description": "A highly revered temple dedicated to Lord Ganesha, established in 1801 and located in Mumbai.",
+    "address": "SK Bole Marg, Prabhadevi, Mumbai, Maharashtra 400028, India",
+    "timing": "5:30 AM - 10:00 PM",
+    "deitySlug": "lord-ganesha",
+    "imageUrl": "https://images.unsplash.com/photo-1609137144813-74d75d6541f5?auto=format&fit=crop&w=600&q=80",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        72.8315,
+        19.0166
+      ]
+    }
+  },
+  {
+    "name": "Badrinath Temple",
+    "description": "A Hindu temple dedicated to Lord Vishnu which is situated in the town of Badrinath in Uttarakhand, India.",
+    "address": "Badrinath, Uttarakhand 246422, India",
+    "timing": "4:30 AM - 9:00 PM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Badrinath_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        79.4938,
+        30.7433
+      ]
+    }
+  },
+  {
+    "name": "Kedarnath Temple",
+    "description": "A Hindu temple dedicated to Lord Shiva, located on the Garhwal Himalayan range near the Mandakini river.",
+    "address": "Kedarnath, Uttarakhand 246445, India",
+    "timing": "4:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Kedarnath_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        79.0669,
+        30.7352
+      ]
+    }
+  },
+  {
+    "name": "Sri Venkateswara Swamy Vaari Temple",
+    "description": "A Hindu temple situated in the hill town of Tirumala at Tirupati, dedicated to Venkateswara, an incarnation of Vishnu.",
+    "address": "S Mada St, Tirumala, Tirupati, Andhra Pradesh 517504, India",
+    "timing": "3:00 AM - 1:30 AM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Tirupati_Balaji_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        79.3498,
+        13.6833
+      ]
+    }
+  },
+  {
+    "name": "Meenakshi Amman Temple",
+    "description": "A historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai.",
+    "address": "Madurai Main, Madurai, Tamil Nadu 625001, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Meenakshi_Amman_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        78.1198,
+        9.9195
+      ]
+    }
+  },
+  {
+    "name": "Somnath Temple",
+    "description": "The Somnath temple located in Prabhas Patan near Veraval in Saurashtra on the western coast of Gujarat, is believed to be the first among the twelve jyotirlinga shrines of Shiva.",
+    "address": "Somnath Mandir Rd, Somnath, Gujarat 362268, India",
+    "timing": "6:00 AM - 10:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Somnath_temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        70.4012,
+        20.8880
+      ]
+    }
+  },
+  {
+    "name": "Dwarkadhish Temple",
+    "description": "Ancient temple dedicated to Lord Krishna, one of the Char Dham pilgrimage sites.",
+    "address": "Dwarka, Gujarat 361335, India",
+    "timing": "6:30 AM - 9:30 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dwarkadhish_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        68.9678,
+        22.2442
+      ]
+    }
+  },
+  {
+    "name": "Jagannath Temple",
+    "description": "Famous temple dedicated to Lord Jagannath, one of the Char Dham pilgrimage sites.",
+    "address": "Puri, Odisha 752001, India",
+    "timing": "5:00 AM - 11:00 PM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Jagannath_Temple_Puri.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        85.8174,
+        19.8047
+      ]
+    }
+  },
+  {
+    "name": "Ramanathaswamy Temple",
+    "description": "Historic Shiva temple located on Rameswaram Island and one of the twelve Jyotirlingas.",
+    "address": "Rameswaram, Tamil Nadu 623526, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Ramanathaswamy_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        79.3129,
+        9.2881
+      ]
+    }
+  },
+  {
+    "name": "Mahakaleshwar Temple",
+    "description": "One of the twelve Jyotirlinga shrines dedicated to Lord Shiva.",
+    "address": "Ujjain, Madhya Pradesh 456006, India",
+    "timing": "4:00 AM - 11:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Mahakaleshwar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        75.7682,
+        23.1828
+      ]
+    }
+  },
+  {
+    "name": "Omkareshwar Temple",
+    "description": "Jyotirlinga temple situated on Mandhata Island in Madhya Pradesh.",
+    "address": "Omkareshwar, Madhya Pradesh 450554, India",
+    "timing": "5:00 AM - 9:30 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Omkareshwar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.1505,
+        22.2410
+      ]
+    }
+  },
+  {
+    "name": "Trimbakeshwar Temple",
+    "description": "Sacred Jyotirlinga temple near Nashik.",
+    "address": "Trimbak, Maharashtra 422212, India",
+    "timing": "5:30 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Trimbakeshwar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        73.5307,
+        19.9415
+      ]
+    }
+  },
+  {
+    "name": "Bhimashankar Temple",
+    "description": "Ancient Jyotirlinga temple nestled in the Sahyadri hills.",
+    "address": "Pune District, Maharashtra 410509, India",
+    "timing": "4:30 AM - 9:30 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Bhimashankar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        73.5368,
+        19.0713
+      ]
+    }
+  },
+  {
+    "name": "Grishneshwar Temple",
+    "description": "The twelfth Jyotirlinga located near Ellora Caves.",
+    "address": "Ellora, Maharashtra 431102, India",
+    "timing": "5:30 AM - 9:30 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Grishneshwar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        75.1796,
+        20.0258
+      ]
+    }
+  },
+  {
+    "name": "Baidyanath Temple",
+    "description": "One of the revered Jyotirlinga temples dedicated to Lord Shiva.",
+    "address": "Deoghar, Jharkhand 814112, India",
+    "timing": "4:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Baidyanath_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        86.7036,
+        24.4829
+      ]
+    }
+  },
+  {
+    "name": "Nageshwar Jyotirlinga",
+    "description": "Sacred Jyotirlinga temple near Dwarka.",
+    "address": "Dwarka, Gujarat 361345, India",
+    "timing": "6:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Nageshwar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        68.9690,
+        22.4670
+      ]
+    }
+  },
+  {
+    "name": "Mallikarjuna Temple",
+    "description": "One of the twelve Jyotirlingas located at Srisailam.",
+    "address": "Srisailam, Andhra Pradesh 518101, India",
+    "timing": "4:30 AM - 10:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Mallikarjuna_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        78.8697,
+        16.0720
+      ]
+    }
+  },
+  {
+    "name": "Vaishno Devi Bhawan",
+    "description": "One of the most visited pilgrimage sites dedicated to Goddess Vaishno Devi.",
+    "address": "Katra, Jammu and Kashmir 182301, India",
+    "timing": "Open 24 Hours",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Vaishno_Devi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        74.9496,
+        33.0308
+      ]
+    }
+  },
+  {
+    "name": "Kamakhya Temple",
+    "description": "Renowned Shakti Peetha dedicated to Goddess Kamakhya.",
+    "address": "Nilachal Hill, Guwahati, Assam 781010, India",
+    "timing": "5:30 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Kamakhya_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        91.7058,
+        26.1664
+      ]
+    }
+  },
+  {
+    "name": "Dakshineswar Kali Temple",
+    "description": "Historic temple dedicated to Goddess Kali near Kolkata.",
+    "address": "Dakshineswar, Kolkata, West Bengal 700076, India",
+    "timing": "6:00 AM - 8:30 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Dakshineswar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        88.3574,
+        22.6551
+      ]
+    }
+  },
+  {
+    "name": "ISKCON Temple Bangalore",
+    "description": "One of the largest ISKCON temples dedicated to Lord Krishna.",
+    "address": "Rajajinagar, Bengaluru, Karnataka 560010, India",
+    "timing": "4:30 AM - 8:30 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/ISKCON_Bangalore.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.5487,
+        13.0098
+      ]
+    }
+  },
+  {
+    "name": "Banke Bihari Temple",
+    "description": "Famous temple of Lord Krishna in Vrindavan.",
+    "address": "Vrindavan, Uttar Pradesh 281121, India",
+    "timing": "7:45 AM - 9:30 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Banke_Bihari_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.7006,
+        27.5756
+      ]
+    }
+  },
+  {
+    "name": "Prem Mandir",
+    "description": "Magnificent temple dedicated to Radha Krishna in Vrindavan.",
+    "address": "Vrindavan, Uttar Pradesh 281121, India",
+    "timing": "5:30 AM - 8:30 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Prem_Mandir.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.7300,
+        27.5635
+      ]
+    }
+  },
+  {
+    "name": "Birla Mandir Jaipur",
+    "description": "Beautiful marble temple dedicated to Lord Vishnu and Goddess Lakshmi.",
+    "address": "Jaipur, Rajasthan 302004, India",
+    "timing": "6:00 AM - 8:00 PM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Birla_Mandir_Jaipur.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        75.8267,
+        26.8928
+      ]
+    }
+  },
+  {
+    "name": "Lingaraj Temple",
+    "description": "Ancient temple dedicated to Harihara, primarily worshipped as Lord Shiva.",
+    "address": "Bhubaneswar, Odisha 751002, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Lingaraj_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        85.8336,
+        20.2376
+      ]
+    }
+  },
+  {
+    "name": "Annamalaiyar Temple",
+    "description": "Massive Shiva temple located in Tiruvannamalai, famous for Karthigai Deepam.",
+    "address": "Tiruvannamalai, Tamil Nadu 606601, India",
+    "timing": "5:30 AM - 9:30 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Annamalaiyar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        79.0747,
+        12.2319
+      ]
+    }
+  },
+  {
+    "name": "Kashi Kal Bhairav Temple",
+    "description": "Ancient temple dedicated to Kal Bhairav, the guardian deity of Kashi.",
+    "address": "Visheshwarganj, Varanasi, Uttar Pradesh 221001, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Kal_Bhairav_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        83.0127,
+        25.3176
+      ]
+    }
+  },
+  {
+    "name": "Mangalnath Temple",
+    "description": "Ancient Shiva temple believed to be the birthplace of planet Mars according to Hindu tradition.",
+    "address": "Ujjain, Madhya Pradesh 456006, India",
+    "timing": "5:00 AM - 8:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Mangalnath_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        75.7846,
+        23.2017
+      ]
+    }
+  },
+  {
+    "name": "Sankat Mochan Hanuman Temple",
+    "description": "One of the most famous Hanuman temples established by Goswami Tulsidas.",
+    "address": "Varanasi, Uttar Pradesh 221005, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "lord-hanuman",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Sankat_Mochan_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        82.9997,
+        25.2825
+      ]
+    }
+  },
+  {
+    "name": "Hanuman Garhi",
+    "description": "A famous hilltop Hanuman temple in Ayodhya.",
+    "address": "Ayodhya, Uttar Pradesh 224123, India",
+    "timing": "4:00 AM - 10:00 PM",
+    "deitySlug": "lord-hanuman",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Hanuman_Garhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        82.2058,
+        26.7982
+      ]
+    }
+  },
+  {
+    "name": "Shri Ram Janmabhoomi Mandir",
+    "description": "Grand temple built at the birthplace of Lord Shri Ram.",
+    "address": "Ayodhya, Uttar Pradesh 224123, India",
+    "timing": "6:00 AM - 9:00 PM",
+    "deitySlug": "lord-rama",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Ram_Mandir_Ayodhya.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        82.1940,
+        26.7956
+      ]
+    }
+  },
+  {
+    "name": "Chamundeshwari Temple",
+    "description": "Hilltop temple dedicated to Goddess Chamundeshwari.",
+    "address": "Chamundi Hills, Mysuru, Karnataka 570010, India",
+    "timing": "7:30 AM - 9:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Chamundeshwari_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.6695,
+        12.2726
+      ]
+    }
+  },
+  {
+    "name": "Kanaka Durga Temple",
+    "description": "Ancient temple dedicated to Goddess Kanaka Durga.",
+    "address": "Vijayawada, Andhra Pradesh 520001, India",
+    "timing": "4:00 AM - 9:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Kanaka_Durga_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        80.6168,
+        16.5085
+      ]
+    }
+  },
+  {
+    "name": "Mookambika Temple",
+    "description": "Famous temple dedicated to Goddess Mookambika.",
+    "address": "Kollur, Karnataka 576220, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Mookambika_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        74.7942,
+        13.8587
+      ]
+    }
+  },
+  {
+    "name": "Ananta Padmanabhaswamy Temple",
+    "description": "Historic temple dedicated to Lord Vishnu and famous for its hidden treasures.",
+    "address": "Thiruvananthapuram, Kerala 695023, India",
+    "timing": "3:30 AM - 7:30 PM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Padmanabhaswamy_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.9436,
+        8.4828
+      ]
+    }
+  },
+  {
+    "name": "Udupi Sri Krishna Temple",
+    "description": "Renowned temple dedicated to Lord Krishna established by Madhvacharya.",
+    "address": "Udupi, Karnataka 576101, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Udupi_Krishna_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        74.7421,
+        13.3414
+      ]
+    }
+  },
+  {
+    "name": "Govind Dev Ji Temple",
+    "description": "Historic Krishna temple located in Jaipur City Palace complex.",
+    "address": "Jaipur, Rajasthan 302002, India",
+    "timing": "4:30 AM - 9:30 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Govind_Dev_Ji.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        75.8236,
+        26.9252
+      ]
+    }
+  },
+  {
+    "name": "Sri Krishna Janmabhoomi Temple",
+    "description": "Sacred temple marking the birthplace of Lord Krishna.",
+    "address": "Mathura, Uttar Pradesh 281001, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Krishna_Janmabhoomi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.6737,
+        27.5035
+      ]
+    }
+  },
+  {
+    "name": "Chintpurni Temple",
+    "description": "One of the Shakti Peethas dedicated to Goddess Chintpurni.",
+    "address": "Una, Himachal Pradesh 177110, India",
+    "timing": "4:00 AM - 11:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Chintpurni_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.0923,
+        31.8337
+      ]
+    }
+  },
+  {
+    "name": "Jwala Ji Temple",
+    "description": "Sacred Shakti Peetha known for its eternal flames.",
+    "address": "Kangra, Himachal Pradesh 176031, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Jwala_Ji_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.3196,
+        31.8803
+      ]
+    }
+  },
+  {
+    "name": "Naina Devi Temple",
+    "description": "One of the 51 Shakti Peethas situated atop Naina Hill.",
+    "address": "Bilaspur, Himachal Pradesh 174310, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Naina_Devi_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.8786,
+        31.3136
+      ]
+    }
+  },
+  {
+    "name": "Shri Kaalahasti Temple",
+    "description": "Ancient Shiva temple famous for Rahu-Ketu dosha pujas.",
+    "address": "Srikalahasti, Andhra Pradesh 517644, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Srikalahasti_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        79.7037,
+        13.7516
+      ]
+    }
+  },
+  {
+    "name": "Murudeshwar Temple",
+    "description": "Shiva temple famous for its giant statue of Lord Shiva overlooking the Arabian Sea.",
+    "address": "Murudeshwar, Karnataka 581350, India",
+    "timing": "6:00 AM - 8:30 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Murudeshwar_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        74.4846,
+        14.0945
+      ]
+    }
+  },
+  {
+    "name": "Parli Vaijnath Temple",
+    "description": "One of the revered Jyotirlinga temples of Lord Shiva.",
+    "address": "Beed, Maharashtra 431515, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Parli_Vaijnath.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.5267,
+        18.8508
+      ]
+    }
+  },
+  {
+    "name": "Tulja Bhavani Temple",
+    "description": "Historic temple dedicated to Goddess Bhavani, revered by Chhatrapati Shivaji Maharaj.",
+    "address": "Tuljapur, Maharashtra 413601, India",
+    "timing": "4:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Tulja_Bhavani.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        76.0688,
+        18.0074
+      ]
+    }
+  },
+  {
+    "name": "Kukke Subramanya Temple",
+    "description": "Renowned temple dedicated to Lord Kartikeya (Subramanya).",
+    "address": "Subramanya, Karnataka 574238, India",
+    "timing": "6:00 AM - 8:00 PM",
+    "deitySlug": "lord-kartikeya",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Kukke_Subramanya.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        75.6014,
+        12.6623
+      ]
+    }
+  }
+]

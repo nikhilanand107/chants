@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Shiva Aarti (Om Jai Shiv Omkara)",
+    "deitySlug": "lord-shiva",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+    "lyrics": [
+      {
+        "stanzaNumber": 1,
+        "originalText": "जय शिव ओंकारा, हर जय शिव ओंकारा।\nब्रह्मा विष्णु सदाशिव अर्द्धांगी धारा॥",
+        "transliteration": "Jai Shiv Omkara, Har Jai Shiv Omkara\nBrahma Vishnu Sadashiv Ardhangi Dhara",
+        "translation": "Glory to You, Lord Shiva, who wears the sacred Om symbol, and whose form is shared with Goddess Parvati."
+      },
+      {
+        "stanzaNumber": 2,
+        "originalText": "एकानन चतुरानन पञ्चानन राजे।\nहंसासन गरुड़ासन वृषवाहन साजे॥",
+        "transliteration": "Ekanan Chaturanan Panchanan Raje\nHansasan Garudasan Vrishvahan Saje",
+        "translation": "Having one, four, or five faces, riding on the swan, the eagle, and the bull (Nandi) elegantly."
+      }
+    ]
+  },
+  {
+    "title": "Ganesha Aarti (Jai Ganesh Deva)",
+    "deitySlug": "lord-ganesha",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+    "lyrics": [
+      {
+        "stanzaNumber": 1,
+        "originalText": "जय गणेश जय गणेश जय गणेश देवा।\nमाता जाकी पार्वती पिता महादेवा॥",
+        "transliteration": "Jai Ganesh Jai Ganesh Jai Ganesh Deva\nMata Jaki Parvati Pita Mahadeva",
+        "translation": "Glory to Ganesha! Mother is Parvati, Father is Lord Shiva."
+      },
+      {
+        "stanzaNumber": 2,
+        "originalText": "एकदन्त दयावन्त चार भुजाधारी।\nमाथे पर तिलक सोहे मूसे की सवारी॥",
+        "transliteration": "Ekadant Dayavant Char Bhujadhari\nMathe Par Tilak Sohe Moose Ki Sawari",
+        "translation": "Single-tusked, merciful, holding weapons in four arms, wearing a red forehead mark, and riding a mouse."
+      }
+    ]
+  },
+  {
+    "title": "Durga Aarti (Jai Ambe Gauri)",
+    "deitySlug": "goddess-durga",
+    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+    "lyrics": [
+      {
+        "stanzaNumber": 1,
+        "originalText": "जय अम्बे गौरी, मैया जय श्यामा गौरी।\nतुमको निसिदिन ध्यावत, हरि ब्रह्मा सिवरी॥",
+        "transliteration": "Jai Ambe Gauri, Maiya Jai Shyama Gauri\nTumko Nisidin Dhyavat, Hari Brahma Sivri",
+        "translation": "Glory to You, Mother Gauri, who is worshipped day and night by Vishnu, Brahma, and Shiva."
+      }
+    ]
+  }
+]

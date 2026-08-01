@@ -8,13 +8,15 @@ const Chalisa = require('../models/Chalisa');
 const seedData = async () => {
   try {
     // We clear database collections to do a fresh seed with new deities, mantras, and chalisas
-    console.log('Clearing old spiritual database records...');
-    await Deity.deleteMany({});
-    await Mantra.deleteMany({});
-    await Aarti.deleteMany({});
-    await Festival.deleteMany({});
-    await Temple.deleteMany({});
-    await Chalisa.deleteMany({});
+    // Check if database is already seeded
+const existingDeities = await Deity.countDocuments();
+
+if (existingDeities > 0) {
+  console.log("Database already contains data. Skipping seed.");
+  return;
+}
+
+console.log("Database is empty. Seeding...");
 
     console.log('Seeding spiritual content database...');
 

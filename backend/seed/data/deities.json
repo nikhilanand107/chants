@@ -1,0 +1,278 @@
+[
+  {
+    "name": "Lord Shiva",
+    "slug": "lord-shiva",
+    "description": "The Destroyer of evil and the Transformer within the Trimurti. He is the patron god of yoga, meditation, and arts.",
+    "vehicle": "Nandi (The Bull)",
+    "weapon": "Trishula (Trident)",
+    "festivals": [
+      "Maha Shivratri",
+      "Shravan Somvar"
+    ],
+    "thumbnailUrl": "https://i.pinimg.com/736x/31/06/11/310611727d6179f43abb1d0633a02e90.jpg",
+    "imageUrl": "https://i.pinimg.com/736x/31/06/11/310611727d6179f43abb1d0633a02e90.jpg",
+    "stories": [
+      {
+        "title": "The Churning of the Ocean (Samudra Manthan)",
+        "content": "During the churning of the cosmic ocean, a deadly poison (Halahala) emerged that threatened to destroy all creation. To protect the universe, Lord Shiva swallowed the poison, holding it in his throat. This turned his neck blue, earning him the name Neelkanth."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Third Eye",
+        "description": "Represents wisdom and the destruction of ignorance."
+      },
+      {
+        "aspect": "Crescent Moon",
+        "description": "Adorning his head, it signifies control over time and the cycles of nature."
+      }
+    ]
+  },
+  {
+    "name": "Lord Ganesha",
+    "slug": "lord-ganesha",
+    "description": "The Elephant-headed deity, known as the Remover of Obstacles, the patron of arts and sciences, and the Deva of intellect and wisdom.",
+    "vehicle": "Krauncha (The Mouse)",
+    "weapon": "Pasha (Noose) & Ankusha (Axe)",
+    "festivals": [
+      "Ganesh Chaturthi"
+    ],
+    "thumbnailUrl": "https://images.pexels.com/photos/13326699/pexels-photo-13326699.jpeg?cs=srgb&dl=pexels-sonika-agarwal-1264788-13326699.jpg&fm=jpg",
+    "imageUrl": "https://images.pexels.com/photos/13326699/pexels-photo-13326699.jpeg?cs=srgb&dl=pexels-sonika-agarwal-1264788-13326699.jpg&fm=jpg",
+    "stories": [
+      {
+        "title": "The Race Around the Universe",
+        "content": "Ganesha and his brother Kartikeya were challenged to race around the universe. While Kartikeya flew off on his peacock, Ganesha walked around his parents, Lord Shiva and Goddess Parvati, declaring that they represented the entire universe to him. Moved by his wisdom, they declared him the winner."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Elephant Head",
+        "description": "Symbolizes immense wisdom, foresight, and listening ability."
+      }
+    ]
+  },
+  {
+    "name": "Lord Hanuman",
+    "slug": "lord-hanuman",
+    "description": "The loyal devotee of Lord Rama, representing strength, devotion, humility, and selflessness.",
+    "vehicle": "None",
+    "weapon": "Gada (Mace)",
+    "festivals": [
+      "Hanuman Jayanti"
+    ],
+    "thumbnailUrl": "https://wallpaperaccess.com/full/9219445.jpg",
+    "imageUrl": "https://wallpapers.com/images/featured/hanuman-art-5azt21fx3boril6u.jpg",
+    "stories": [
+      {
+        "title": "Lifting the Dronagiri Mountain",
+        "content": "When Lord Rama's brother Lakshmana was mortally wounded during the battle in Lanka, Hanuman was sent to fetch the Sanjeevani herb from the Himalayas. Unable to identify the herb, Hanuman lifted the entire Dronagiri mountain and carried it back to the battlefield, saving Lakshmana's life."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Torn Chest",
+        "description": "Reveals images of Rama and Sita, signifying absolute and unwavering devotion."
+      }
+    ]
+  },
+  {
+    "name": "Goddess Durga",
+    "slug": "goddess-durga",
+    "description": "The protective mother goddess representing the divine feminine strength (Shakti), protector of the righteous and destroyer of demonic forces.",
+    "vehicle": "Tiger / Lion",
+    "weapon": "Trishula, Shankha, Chakra, Bow and Arrow",
+    "festivals": [
+      "Navratri",
+      "Durga Puja"
+    ],
+    "thumbnailUrl": "https://i.pinimg.com/originals/7b/41/b2/7b41b26836138d06659caabb38e420d6.jpg",
+    "imageUrl": "https://i.pinimg.com/originals/7b/41/b2/7b41b26836138d06659caabb38e420d6.jpg",
+    "stories": [
+      {
+        "title": "Defeat of Mahishasura",
+        "content": "The buffalo demon Mahishasura unleashed terror on Earth and Heaven. Since a boon prevented his defeat by any man or god, the trinity combined their energies to manifest Goddess Durga. She fought him for nine days and nights, ultimately decapitating him with her trident."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Ten Arms",
+        "description": "Represents protection from all ten directions of the universe."
+      }
+    ]
+  },
+  {
+    "name": "Lord Krishna",
+    "slug": "lord-krishna",
+    "description": "The eighth avatar of Lord Vishnu, the god of love, compassion, tenderness, playfulness, and the speaker of the Bhagavad Gita.",
+    "vehicle": "None",
+    "weapon": "Sudarshana Chakra & Flute",
+    "festivals": [
+      "Krishna Janmashtami",
+      "Holi"
+    ],
+    "thumbnailUrl": "https://tse1.mm.bing.net/th/id/OIP.jeaR4vQUtzHTOaAVfnvjrgHaHa?r=0&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.jeaR4vQUtzHTOaAVfnvjrgHaHa?r=0&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "stories": [
+      {
+        "title": "Lifting the Govardhan Hill",
+        "content": "To protect the villagers of Vrindavan from torrents of rain sent by the angry rain god Indra, Lord Krishna lifted the Govardhan Hill on his little finger, providing a giant umbrella for the people and animals for seven days."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Peacock Feather",
+        "description": "Symbolizes beauty, purity, and the vibrant colors of nature and cosmic creation."
+      }
+    ]
+  },
+  {
+    "name": "Lord Rama",
+    "slug": "lord-rama",
+    "description": "The seventh avatar of Lord Vishnu, the prince and king of Ayodhya, representing the ideal human and embodiment of righteousness (Dharma).",
+    "vehicle": "None",
+    "weapon": "Kodanda (Bow)",
+    "festivals": [
+      "Rama Navami",
+      "Diwali"
+    ],
+    "thumbnailUrl": "https://fabzie.in/cdn/shop/articles/ram_ji-534856.jpg?v=1738379731&width=1100",
+    "imageUrl": "https://fabzie.in/cdn/shop/articles/ram_ji-534856.jpg?v=1738379731&width=1100",
+    "stories": [
+      {
+        "title": "Building the Ram Setu Bridge",
+        "content": "To cross the ocean to Lanka to rescue his wife Sita, Rama's vanara army built a floating stone bridge. Each stone inscribed with Rama's name miraculously floated on water due to their devotion and the divine name's power."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Bow and Arrow",
+        "description": "Symbolizes preparedness, focus, and targets aimed towards upholding righteousness."
+      }
+    ]
+  },
+  {
+    "name": "Goddess Lakshmi",
+    "slug": "goddess-lakshmi",
+    "description": "The goddess of wealth, fortune, power, beauty, fertility, and prosperity. She is the consort of Lord Vishnu.",
+    "vehicle": "Owl (Uluka)",
+    "weapon": "Lotus Flowers",
+    "festivals": [
+      "Diwali",
+      "Lakshmi Puja"
+    ],
+    "thumbnailUrl": "https://tse3.mm.bing.net/th/id/OIP.C_g0bnFxBWPhZil9SiwjagHaJD?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.C_g0bnFxBWPhZil9SiwjagHaJD?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "stories": [
+      {
+        "title": "Emergence from the Milky Ocean",
+        "content": "During Samudra Manthan (churning of the ocean), Goddess Lakshmi emerged standing on a fully bloomed lotus. She chose Lord Vishnu as her eternal consort among all assembled gods due to his righteousness."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Gold Coins Flowing",
+        "description": "Represents prosperity, both material and spiritual, flowing to devotees."
+      }
+    ]
+  },
+  {
+    "name": "Goddess Saraswati",
+    "slug": "goddess-saraswati",
+    "description": "The goddess of knowledge, music, art, speech, wisdom, and learning. She is part of the Tridevi.",
+    "vehicle": "Swan (Hamsa) & Peacock",
+    "weapon": "Veena & Vedas",
+    "festivals": [
+      "Vasant Panchami"
+    ],
+    "thumbnailUrl": "https://i0.wp.com/wordzz.com/wp-content/uploads/2016/10/saraswati-mata.jpg?w=500&ssl=1",
+    "imageUrl": "https://i0.wp.com/wordzz.com/wp-content/uploads/2016/10/saraswati-mata.jpg?w=500&ssl=1",
+    "stories": [
+      {
+        "title": "Flowing as the River Saraswati",
+        "content": "Goddess Saraswati descended to Earth as a holy river of pure knowledge to cleanse the worlds, fertilize the plains, and inspire sages to compile the sacred scriptures."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Veena (Lute)",
+        "description": "Represents the harmony of all creative arts, intellect, and speech."
+      }
+    ]
+  },
+  {
+    "name": "Lord Vishnu",
+    "slug": "lord-vishnu",
+    "description": "The Preserver and Protector of the universe, responsible for maintaining balance and upholding Dharma.",
+    "vehicle": "Garuda",
+    "weapon": "Sudarshana Chakra, Kaumodaki (Mace), Panchajanya (Conch)",
+    "festivals": [
+      "Diwali",
+      "Vaikuntha Ekadashi"
+    ],
+    "thumbnailUrl": "https://image.winudf.com/v2/image1/Y29tLm15c3RhcmFwcHMud2FsbHBhcGVyc2xvcmR2aXNobnVfc2NyZWVuXzBfMTY5MDkxODIwOV8wMTc/screen-0.jpg?fakeurl=1&type=.jpg",
+    "imageUrl": "https://image.winudf.com/v2/image1/Y29tLm15c3RhcmFwcHMud2FsbHBhcGVyc2xvcmR2aXNobnVfc2NyZWVuXzBfMTY5MDkxODIwOV8wMTc/screen-0.jpg?fakeurl=1&type=.jpg",
+    "stories": [
+      {
+        "title": "The Ten Avatars (Dashavatara)",
+        "content": "Whenever Dharma is threatened by evil, Lord Vishnu descends to Earth in various forms (avatars) to restore order. His most famous avatars include Rama and Krishna."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Blue Skin",
+        "description": "Represents the infinite and all-pervading nature, like the sky or the ocean."
+      }
+    ]
+  },
+  {
+    "name": "Lord Brahma",
+    "slug": "lord-brahma",
+    "description": "The Creator of the universe in the Hindu trinity (Trimurti). He created all living beings and the universe itself.",
+    "vehicle": "Hamsa (Swan or Goose)",
+    "weapon": "Brahmastra",
+    "festivals": [
+      "Pushkar Fair"
+    ],
+    "thumbnailUrl": "https://vedicfeed.com/wp-content/uploads/2019/02/Brahma.jpg",
+    "imageUrl": "https://vedicfeed.com/wp-content/uploads/2019/02/Brahma.jpg",
+    "stories": [
+      {
+        "title": "Creation from the Lotus",
+        "content": "According to Puranic legends, Brahma was born from a lotus that emerged from the navel of Lord Vishnu."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Four Faces",
+        "description": "Represent the four Vedas, the four yugas (epochs), and the four directions."
+      }
+    ]
+  },
+  {
+    "name": "Lord Surya",
+    "slug": "lord-surya",
+    "description": "The Sun God, the supreme light and life-giver, revered for his energy and illumination.",
+    "vehicle": "Chariot pulled by seven horses",
+    "weapon": "None",
+    "festivals": [
+      "Makar Sankranti",
+      "Chhath Puja",
+      "Ratha Saptami"
+    ],
+    "thumbnailUrl": "https://i.pinimg.com/originals/fb/51/19/fb51193d4363f267a92079328ba483c9.jpg",
+    "imageUrl": "https://i.pinimg.com/originals/fb/51/19/fb51193d4363f267a92079328ba483c9.jpg",
+    "stories": [
+      {
+        "title": "The Chariot",
+        "content": "Lord Surya rides a magnificent chariot driven by Aruna, pulled by seven horses representing the colors of the rainbow or the seven days of the week."
+      }
+    ],
+    "symbolism": [
+      {
+        "aspect": "Seven Horses",
+        "description": "Represent the seven chakras or the days of the week."
+      }
+    ]
+  }
+]
