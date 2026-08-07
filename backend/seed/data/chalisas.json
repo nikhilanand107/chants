@@ -2,7 +2,7 @@
   {
     "title": "Hanuman Chalisa",
     "deitySlug": "lord-hanuman",
-    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+    "audioFileUrl": "https://s3.ustatik.com/audio.com.audio/transcoding/57/00/1861001021910057-1861001022003278-1861001035028509.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=F0E8U41NBMMW3Y027UTJ%2F20260805%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20260805T055250Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=e0edfdbb223b417959de6cbe89ee8120b8ecc438e42b713839e3838a277279f0",
     "verses": [
       {
         "verseNumber": 1,
@@ -30,7 +30,7 @@
   {
     "title": "Durga Chalisa",
     "deitySlug": "goddess-durga",
-    "audioFileUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+    "audioFileUrl": "https://s3.ustatik.com/audio.com.audio/transcoding/00/15/1803906690801500-1803906690911399-1803906701100377.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=F0E8U41NBMMW3Y027UTJ%2F20260805%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20260805T162051Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=c81c82fa84dffab0056cd527ea2fe28fa60f9f753d4a83eeed4baf7272a695a2",
     "verses": [
       {
         "verseNumber": 1,

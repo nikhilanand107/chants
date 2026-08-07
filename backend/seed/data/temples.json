@@ -703,5 +703,305 @@
         12.6623
       ]
     }
+  },
+  {
+    "name": "Akshardham Temple",
+    "description": "Magnificent Hindu temple dedicated to Bhagwan Swaminarayan, known for its architecture, exhibitions, and musical fountain.",
+    "address": "NH 24, Akshardham Setu, New Delhi, Delhi 110092, India",
+    "timing": "10:00 AM - 6:30 PM (Closed on Monday)",
+    "deitySlug": "lord-swaminarayan",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Swaminarayan_Akshardham%2C_New_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2773,
+        28.6127
+      ]
+    }
+  },
+  {
+    "name": "Kalkaji Mandir",
+    "description": "Ancient temple dedicated to Goddess Kali and one of Delhi's most revered Shakti Peeths.",
+    "address": "Kalkaji, New Delhi, Delhi 110019, India",
+    "timing": "4:00 AM - 11:30 PM",
+    "deitySlug": "goddess-kali",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/Kalkaji_Mandir.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2588,
+        28.5493
+      ]
+    }
+  },
+  {
+    "name": "Hanuman Mandir (Connaught Place)",
+    "description": "Historic Hanuman temple believed to date back to the Mahabharata era.",
+    "address": "Baba Kharak Singh Marg, Connaught Place, New Delhi, Delhi 110001, India",
+    "timing": "5:00 AM - 11:00 PM",
+    "deitySlug": "lord-hanuman",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Hanuman_Mandir_CP.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2167,
+        28.6328
+      ]
+    }
+  },
+  {
+    "name": "Birla Mandir (Laxminarayan Temple)",
+    "description": "Famous temple dedicated to Lord Vishnu (Lakshmi Narayan), inaugurated by Mahatma Gandhi.",
+    "address": "Mandir Marg, New Delhi, Delhi 110001, India",
+    "timing": "4:30 AM - 1:30 PM, 2:30 PM - 9:00 PM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Laxminarayan_Temple_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2027,
+        28.6275
+      ]
+    }
+  },
+  {
+    "name": "Chhatarpur Temple",
+    "description": "One of India's largest temple complexes dedicated to Goddess Katyayani.",
+    "address": "Chhatarpur, New Delhi, Delhi 110074, India",
+    "timing": "6:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Chhatarpur_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.1814,
+        28.5067
+      ]
+    }
+  },
+  {
+    "name": "ISKCON Temple Delhi",
+    "description": "International Society for Krishna Consciousness temple dedicated to Radha Krishna.",
+    "address": "Sant Nagar, East of Kailash, New Delhi, Delhi 110065, India",
+    "timing": "4:30 AM - 9:00 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/ISKCON_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2531,
+        28.5618
+      ]
+    }
+  },
+  {
+    "name": "Jhandewalan Temple",
+    "description": "Ancient temple dedicated to Goddess Aadi Shakti, famous for its giant Hanuman statue nearby.",
+    "address": "Jhandewalan, New Delhi, Delhi 110055, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Jhandewalan_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2015,
+        28.6445
+      ]
+    }
+  },
+  {
+    "name": "Yogmaya Temple",
+    "description": "One of Delhi's oldest surviving temples dedicated to Goddess Yogmaya.",
+    "address": "Mehrauli, New Delhi, Delhi 110030, India",
+    "timing": "5:00 AM - 9:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Yogmaya_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.1828,
+        28.5235
+      ]
+    }
+  },
+  {
+    "name": "Sai Baba Temple Lodhi Road",
+    "description": "Popular temple dedicated to Shirdi Sai Baba, visited by devotees throughout the week.",
+    "address": "Lodhi Road, New Delhi, Delhi 110003, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "sai-baba",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Sai_Baba_Temple_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2258,
+        28.5928
+      ]
+    }
+  },
+  {
+    "name": "Shri Digambar Jain Lal Mandir",
+    "description": "Oldest Jain temple in Delhi dedicated to Lord Mahavira.",
+    "address": "Opposite Red Fort, Chandni Chowk, Delhi 110006, India",
+    "timing": "5:30 AM - 10:30 PM",
+    "deitySlug": "lord-mahavira",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Lal_Mandir_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2410,
+        28.6565
+      ]
+    }
+  },
+  {
+    "name": "Shri Adya Katyayani Shakti Peeth",
+    "description": "Popular temple dedicated to Goddess Katyayani within the Chhatarpur Temple complex.",
+    "address": "Chhatarpur, New Delhi, Delhi 110074, India",
+    "timing": "6:00 AM - 10:00 PM",
+    "deitySlug": "goddess-durga",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Chhatarpur_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.1815,
+        28.5065
+      ]
+    }
+  },
+  {
+    "name": "Gauri Shankar Temple",
+    "description": "Historic Shiva temple located near Red Fort in Chandni Chowk.",
+    "address": "Chandni Chowk, Delhi 110006, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Gauri_Shankar_Temple_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2338,
+        28.6568
+      ]
+    }
+  },
+  {
+    "name": "Shri Uttara Guruvayurappan Temple",
+    "description": "South Indian style temple dedicated to Lord Krishna and Lord Ayyappa.",
+    "address": "Mayur Vihar Phase I, New Delhi, Delhi 110091, India",
+    "timing": "5:30 AM - 9:00 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Uttara_Guruvayurappan_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2993,
+        28.6083
+      ]
+    }
+  },
+  {
+    "name": "Shri Jagannath Temple",
+    "description": "Temple dedicated to Lord Jagannath, Balabhadra and Subhadra.",
+    "address": "Hauz Khas, New Delhi, Delhi 110016, India",
+    "timing": "5:30 AM - 9:00 PM",
+    "deitySlug": "lord-jagannath",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jagannath_Temple_Delhi.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2057,
+        28.5483
+      ]
+    }
+  },
+  {
+    "name": "Neeli Chhatri Temple",
+    "description": "Ancient Shiva temple believed to have been established by the Pandavas.",
+    "address": "Nigambodh Ghat, Delhi 110054, India",
+    "timing": "6:00 AM - 9:00 PM",
+    "deitySlug": "lord-shiva",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Neeli_Chhatri_Temple.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.2428,
+        28.6672
+      ]
+    }
+  },
+  {
+    "name": "Shri Sheetla Mata Mandir",
+    "description": "Renowned temple dedicated to Goddess Sheetla.",
+    "address": "Sector 6, Gurugram, Haryana 122001, India",
+    "timing": "5:00 AM - 10:00 PM",
+    "deitySlug": "goddess-sheetla",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Sheetla_Mata_Mandir_Gurgaon.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.0277,
+        28.4738
+      ]
+    }
+  },
+  {
+    "name": "ISKCON Noida",
+    "description": "Temple dedicated to Radha Krishna and part of the ISKCON movement.",
+    "address": "Sector 33, Noida, Uttar Pradesh 201301, India",
+    "timing": "4:30 AM - 9:00 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/ISKCON_Noida.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.3635,
+        28.5733
+      ]
+    }
+  },
+  {
+    "name": "Sai Ka Angan",
+    "description": "Peaceful temple dedicated to Shirdi Sai Baba.",
+    "address": "Sushant Lok Phase I, Gurugram, Haryana 122009, India",
+    "timing": "5:30 AM - 9:30 PM",
+    "deitySlug": "sai-baba",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Sai_Ka_Angan_Gurgaon.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.0846,
+        28.4622
+      ]
+    }
+  },
+  {
+    "name": "Shri Siddhdata Ashram",
+    "description": "Large temple complex dedicated to Lord Lakshmi Narayan.",
+    "address": "Sector 87, Faridabad, Haryana 121002, India",
+    "timing": "5:00 AM - 8:30 PM",
+    "deitySlug": "lord-vishnu",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Siddhdata_Ashram.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.3643,
+        28.4125
+      ]
+    }
+  },
+  {
+    "name": "ISKCON Ghaziabad",
+    "description": "Temple dedicated to Sri Sri Radha Madan Mohan.",
+    "address": "Raj Nagar Extension, Ghaziabad, Uttar Pradesh 201017, India",
+    "timing": "4:30 AM - 9:00 PM",
+    "deitySlug": "lord-krishna",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/ISKCON_Ghaziabad.jpg",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.4301,
+        28.6865
+      ]
+    }
   }
 ]

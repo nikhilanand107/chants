@@ -3,7 +3,9 @@
     "title": "Ganesh Chaturthi",
     "description": "A 10-day grand festival honoring the birth of Lord Ganesha.",
     "date": "2026-09-15T00:00:00.000Z",
-    "associatedDeitySlugs": ["lord-ganesha"],
+    "associatedDeitySlugs": [
+      "lord-ganesha"
+    ],
     "rituals": [
       "Clay Ganesha idol installation in homes and public pandals",
       "Chanting Ganesha Atharvashirsha",
@@ -16,7 +18,9 @@
     "title": "Maha Shivratri",
     "description": "The great night of Lord Shiva celebrated annually in reverence.",
     "date": "2027-03-06T00:00:00.000Z",
-    "associatedDeitySlugs": ["lord-shiva"],
+    "associatedDeitySlugs": [
+      "lord-shiva"
+    ],
     "rituals": [
       "All-night fasting and meditative vigil (Jagaran)",
       "Bathing the Shiva Lingam with water, milk, honey, and Bilva leaves"
@@ -27,12 +31,154 @@
     "title": "Durga Puja & Navratri",
     "description": "The nine-night festival celebrating Goddess Durga's victory over Mahishasura.",
     "date": "2026-10-10T00:00:00.000Z",
-    "associatedDeitySlugs": ["goddess-durga"],
+    "associatedDeitySlugs": [
+      "goddess-durga"
+    ],
     "rituals": [
       "Fasting during the nine days and worshipping the nine avatars of Durga",
       "Performing Garba/Dandiya dances",
       "Reciting Durga Saptashati and Durga Chalisa"
     ],
     "significance": "Celebrates the triumph of divine energy and good over evil."
+  },
+  {
+    "title": "Ram Navami",
+    "description": "Celebrates the birth of Lord Rama, the seventh incarnation of Lord Vishnu.",
+    "date": "2026-03-26T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-rama"
+    ],
+    "rituals": [
+      "Reciting the Ramayana and Ramcharitmanas",
+      "Performing Rama Aarti and Bhajans",
+      "Visiting Rama temples and offering fruits and flowers"
+    ],
+    "significance": "Marks the birth of Lord Rama and inspires devotees to follow the path of truth, righteousness, and devotion."
+  },
+  {
+    "title": "Hanuman Jayanti",
+    "description": "Celebrates the birth of Lord Hanuman, the symbol of strength, devotion, and courage.",
+    "date": "2026-04-02T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-hanuman"
+    ],
+    "rituals": [
+      "Reciting Hanuman Chalisa and Sundarkand",
+      "Offering sindoor, jasmine oil, and laddus",
+      "Performing Hanuman Aarti and visiting Hanuman temples"
+    ],
+    "significance": "Honors Lord Hanuman's unwavering devotion to Lord Rama and seeks blessings for strength, protection, and wisdom."
+  },
+  {
+    "title": "Janmashtami",
+    "description": "Celebrates the birth of Lord Krishna, the eighth incarnation of Lord Vishnu.",
+    "date": "2026-09-03T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-krishna"
+    ],
+    "rituals": [
+      "Observing a day-long fast until midnight",
+      "Singing Krishna Bhajans and performing Jhulan celebrations",
+      "Organizing Dahi Handi events and Krishna Leelas"
+    ],
+    "significance": "Marks the birth of Lord Krishna and celebrates his teachings of love, devotion, and righteousness."
+  },
+  {
+    "title": "Govardhan Puja",
+    "description": "Commemorates Lord Krishna lifting Govardhan Hill to protect the people of Vrindavan.",
+    "date": "2026-11-09T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-krishna"
+    ],
+    "rituals": [
+      "Preparing Annakut with a variety of food offerings",
+      "Circumambulating Govardhan representations",
+      "Offering prayers to Lord Krishna"
+    ],
+    "significance": "Celebrates faith in God, gratitude for nature, and the protection provided by Lord Krishna."
+  },
+  {
+    "title": "Vaikuntha Ekadashi",
+    "description": "One of the most sacred Ekadashi observances dedicated to Lord Vishnu.",
+    "date": "2026-12-30T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-vishnu"
+    ],
+    "rituals": [
+      "Observing Ekadashi fast",
+      "Chanting Vishnu Sahasranama",
+      "Visiting Vishnu temples and passing through the Vaikuntha Dwaram"
+    ],
+    "significance": "It is believed that observing this Ekadashi grants spiritual merit and the blessings of Lord Vishnu."
+  },
+  {
+    "title": "Narasimha Jayanti",
+    "description": "Celebrates the appearance of Lord Narasimha, the fourth incarnation of Lord Vishnu.",
+    "date": "2026-05-01T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-vishnu"
+    ],
+    "rituals": [
+      "Fasting until sunset",
+      "Reciting Narasimha Kavacham",
+      "Offering flowers and sweets to Lord Narasimha"
+    ],
+    "significance": "Commemorates the victory of righteousness over evil and Lord Vishnu's protection of Prahlada."
+  },
+  {
+    "title": "Chhath Puja",
+    "description": "Ancient Vedic festival dedicated to Lord Surya and Chhathi Maiya.",
+    "date": "2026-11-15T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-surya"
+    ],
+    "rituals": [
+      "Observing a rigorous four-day fast",
+      "Offering Arghya to the setting and rising Sun",
+      "Preparing traditional prasad like Thekua"
+    ],
+    "significance": "Expresses gratitude to Lord Surya for sustaining life and seeks health, prosperity, and family well-being."
+  },
+  {
+    "title": "Ratha Saptami",
+    "description": "Celebrates the symbolic birth and glory of Lord Surya.",
+    "date": "2026-01-25T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "lord-surya"
+    ],
+    "rituals": [
+      "Taking a holy bath before sunrise",
+      "Offering water (Arghya) to the Sun",
+      "Reciting Aditya Hridayam and Surya Ashtakam"
+    ],
+    "significance": "Dedicated to Lord Surya for good health, vitality, and prosperity."
+  },
+  {
+    "title": "Vasant Panchami",
+    "description": "Festival dedicated to Goddess Saraswati, the deity of wisdom, learning, music, and arts.",
+    "date": "2026-01-23T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "goddess-saraswati"
+    ],
+    "rituals": [
+      "Worshipping books and musical instruments",
+      "Offering yellow flowers and sweets",
+      "Students seeking blessings before studies"
+    ],
+    "significance": "Celebrates knowledge, wisdom, creativity, and the arrival of spring."
+  },
+  {
+    "title": "Saraswati Puja",
+    "description": "A special worship of Goddess Saraswati, especially observed in schools and educational institutions.",
+    "date": "2026-01-23T00:00:00.000Z",
+    "associatedDeitySlugs": [
+      "goddess-saraswati"
+    ],
+    "rituals": [
+      "Installing Saraswati idol",
+      "Performing Saraswati Aarti",
+      "Offering books, pens, and musical instruments to the Goddess"
+    ],
+    "significance": "Invokes the blessings of Goddess Saraswati for wisdom, education, and artistic excellence."
   }
 ]
