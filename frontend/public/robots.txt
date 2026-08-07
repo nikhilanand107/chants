@@ -1,0 +1,12 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block private/auth routes
+Disallow: /dashboard
+Disallow: /chant
+Disallow: /login
+Disallow: /register
+
+# Sitemap location
+Sitemap: https://chants-zeta.vercel.app/sitemap.xml
